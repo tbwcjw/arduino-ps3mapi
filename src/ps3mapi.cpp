@@ -2,16 +2,16 @@
 #include "Arduino.h"
 
 PS3Mapi::PS3Mapi(const String& ip) : ip(ip), 
-                                    system(this), 
-                                    notify(this), 
-                                    process(this), 
-                                    memory(this), 
-                                    module(this), 
-                                    thread(this), 
-                                    registry(this), 
-                                    level(this), 
-                                    file(this),
-                                    pad(this) {}
+system(this), 
+notify(this), 
+process(this), 
+memory(this), 
+module(this), 
+thread(this), 
+registry(this), 
+level(this), 
+file(this),
+pad(this) {}
 
 PS3Mapi::System::System(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::Notify::Notify(PS3Mapi* wm) : ps3mapi(wm) {}
@@ -77,11 +77,11 @@ String PS3Mapi::System::checkSyscall(const int& sc_num) {
     return ps3mapi->_sendCommand("ps3mapi.ps3", "PS3 CHECKSYSCALL " + String(sc_num));
 }
 
-String PS3Mapi::System::pCheckSyscall8() {
-    return ps3mapi->_sendCommand("ps3mapi.ps3", "PS3 PCHECKSYSCALL8");
+bool PS3Mapi::System::pCheckSyscall8() {
+    return ps3mapi->_sendCommandBool("ps3mapi.ps3", "PS3 PCHECKSYSCALL8");
 }
-String PS3Mapi::System::getRsxClock() {
-    return ps3mapi->_sendCommand("ps3mapi.ps3", "PS3 GETRSXCLOCK");
+std::pair<int,int> PS3Mapi::System::getRsxClock() {
+    return ps3mapi->_sendCommandTuple("ps3mapi.ps3", "PS3 GETRSXCLOCK");
 }
 String PS3Mapi::System::getIdps() {
     return ps3mapi->_sendCommand("ps3mapi.ps3", "PS3 GETIDPS");
@@ -156,12 +156,12 @@ String PS3Mapi::Process::getProcName(const String& pid) {
     return ps3mapi->_sendCommand("ps3mapi.ps3", "PROCESS GETNAME " + pid);
 }
 
-String PS3Mapi::Process::getAllProcID() {
-    return ps3mapi->_sendCommand("ps3mapi.ps3", "PROCESS GETALLPID");
+std::vector<String> PS3Mapi::Process::getAllProcID() {
+    return ps3mapi->_sendCommandArray("ps3mapi.ps3", "PROCESS GETALLPID");
 }
 // - Memory -
-String PS3Mapi::Memory::getMemory(const String& pid, const String& offset, const String& size) {
-    return ps3mapi->_sendCommand("ps3mapi.ps3", "MEMORY GET " + pid + " " + offset + " " + size);
+String PS3Mapi::Memory::getMemory(const String& pid, const String& offset, const int& size) {
+    return ps3mapi->_sendCommand("ps3mapi.ps3", "MEMORY GET " + pid + " " + offset + " " + String(size));
 }
 
 bool PS3Mapi::Memory::setMemory(const String& pid, const String& address, const String& value) {
@@ -233,18 +233,15 @@ bool PS3Mapi::Level::pokeLv2(const String& address, const String& value) {
     return ps3mapi->_sendCommandBool("ps3mapi.ps3", "POKELV2 " + address);
 }
 // - File -
-String PS3Mapi::File::exists(const String& file_path) {
-    return ps3mapi->_sendCommand("ps3mapi.ps3", "FILE EXISTS " + file_path);
+bool PS3Mapi::File::exists(const String& file_path) {
+    return ps3mapi->_sendCommandBool("ps3mapi.ps3", "FILE EXISTS " + file_path);
 }
 
-String PS3Mapi::File::isDir(const String& file_path) {
-    return ps3mapi->_sendCommand("ps3mapi.ps3", "FILE ISDIR " + file_path);
+bool PS3Mapi::File::isDir(const String& file_path) {
+    return ps3mapi->_sendCommandBool("ps3mapi.ps3", "FILE ISDIR " + file_path);
 }
 String PS3Mapi::File::size(const String& file_path) {
     return ps3mapi->_sendCommand("ps3mapi.ps3", "FILE SIZE " + file_path);
-}
-String PS3Mapi::File::md5(const String& file_path) {
-    return ps3mapi->_sendCommand("ps3mapi.ps3", "FILE MD5 " + file_path);
 }
 // - Pad -
 void PS3Mapi::Pad::pushButtons(const std::vector<String>& buttons, float delay_float) {
@@ -266,66 +263,65 @@ bool PS3Mapi::Pad::cancelButton() {
 bool PS3Mapi::Pad::off() {
     return ps3mapi->_sendCommandBool("pad.ps3", "off");
 }
-bool PS3Mapi::Pad::releaseButtons() {
-    return ps3mapi->_sendCommandBool("pad.ps3", "release");
-}
 
 String PS3Mapi::_sendCommand(const String& apiArg, const String& route) {
     HTTPClient http;
     String url = "http://" + ip + "/" + apiArg + "?" + urlEncode(route);
-    Serial.println(url);
     http.begin(url);
 
     int httpResponseCode = http.GET();
     String value = "";
     if (httpResponseCode > 0) {
         value = extractResponse(http.getString());
-    }
+    } else Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
     http.end();
     return value;
 }
 
-bool PS3Mapi::_sendCommandBool(const String& apiArg, const String& route) {
+std::vector<String> PS3Mapi::_sendCommandArray(const String& apiArg, const String& route) {
     HTTPClient http;
     String url = "http://" + ip + "/" + apiArg + "?" + urlEncode(route);
-    Serial.println(url);
     http.begin(url);
 
     int httpResponseCode = http.GET();
+    std::vector<String> result;
+    if (httpResponseCode < 0) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+    result = arrayToList(http.getString());
     http.end();
-    return httpResponseCode > 0;
+    return result;
+}
+
+bool PS3Mapi::_sendCommandBool(const String& apiArg, const String& route) {
+    HTTPClient http;
+    String url = "http://" + ip + "/" + apiArg;
+    if (route.length() > 0) url += "?" + urlEncode(route);
+    Serial.println("URL " + url);
+
+    http.begin(url);
+    int httpResponseCode = http.GET();
+    if(httpResponseCode < 0) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+
+    String respStr = extractResponse(http.getString());
+    http.end();
+
+    if (respStr == "0" || respStr == "false") return false;
+    if (respStr == "1" || respStr == "true") return true;
+
+    
+    return httpResponseCode > 0; //fallback to simple http response code check
 }
 
 std::pair<int,int> PS3Mapi::_sendCommandTuple(const String& apiArg, const String& route) {
     HTTPClient http;
     String url = "http://" + ip + "/" + apiArg + "?" + urlEncode(route);
-    Serial.println(url);
     http.begin(url);
 
     int httpResponseCode = http.GET();
-    std::pair<int,int> value = {0, 0};
+    if (httpResponseCode < 0) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
 
-    if (httpResponseCode > 0) {
-        String payload = http.getString();
-
-        int start = payload.indexOf("[");
-        int end = payload.indexOf("]");
-
-        if (start >= 0 && end > start) {
-            String numbers = payload.substring(start + 1, end);
-            int commaIndex = numbers.indexOf(",");
-
-            if (commaIndex >= 0) {
-                String first = numbers.substring(0, commaIndex);
-                String second = numbers.substring(commaIndex + 1);
-
-                value.first = first.toInt();
-                value.second = second.toInt();
-            }
-        }
-    }
+    std::pair<int,int> result = parseTuple(http.getString());
 
     http.end();
-    return value;
+    return result;
 }
 

@@ -1,6 +1,6 @@
 /*
 
-  ps3mapi.h - Library for flashing Morse code.
+  ps3mapi.h - Library for controlling homebrewed PS3s running webMAN via PS3MAPI. 
 
   Created by tbwcjw.
 
@@ -10,6 +10,7 @@
 #ifndef PS3MAPI_H
 #define PS3MAPI_H
 
+#pragma once
 #include <HTTPClient.h>
 #include "utils.h"
 #include <utility>
@@ -34,7 +35,7 @@ public:
         String getClockInfo();
         std::pair<int,int> getTemp();
         String checkSyscall(const int& sc_num=8);
-        String getRsxClock();
+        std::pair<int,int> getRsxClock();
         String getIdps();
         bool setIdps(const String& part1, const String& part2);
         String getPsid();
@@ -42,7 +43,7 @@ public:
         bool delHistory();
         bool delHistoryF();
         bool removeHook();
-        String pCheckSyscall8();
+        bool pCheckSyscall8();
         bool setGpuClock(const int& mhz);
         bool setVRamClock(const int& mhz);
         bool disableSyscall(const int& sc_num=8);
@@ -101,13 +102,13 @@ public:
             FIST = 16,
             PLAY = 17,
             PSN1 = 18,
-            PLPLUS = 19,
+            PSPLUS = 19,
             SIGNIN = 20,
             NEW = 21,
             TICK = 22,
             RED_EXCLAIMATION = 23,
             WRENCH = 24,
-            START_TROPHY = 25,
+            STAR_TROPHY = 25,
             PSSTORE = 26,
             FOLDER = 27,
             GUEST = 28,
@@ -147,7 +148,7 @@ public:
         Process(PS3Mapi* wm);
         String getCurrentProcID();
         String getProcName(const String& pid);
-        String getAllProcID();
+        std::vector<String> getAllProcID();
     private:
         PS3Mapi* ps3mapi;
     };
@@ -155,7 +156,7 @@ public:
     class Memory {
     public:
         Memory(PS3Mapi* wm);
-        String getMemory(const String& pid, const String& offset, const String& size);
+        String getMemory(const String& pid, const String& offset, const int& size=16);
         bool setMemory(const String& pid, const String& address, const String& value);
         String payload(const String& pid, const String& payload_path);
         bool unloadPayload(const String& pid);
@@ -212,10 +213,9 @@ public:
     class File {
     public:
         File(PS3Mapi* wm);
-        String exists(const String& file_path);
-        String isDir(const String& file_path);
+        bool exists(const String& file_path);
+        bool isDir(const String& file_path);
         String size(const String& file_path);
-        String md5(const String& file_path);
     private:
         PS3Mapi* ps3mapi;
     };
@@ -228,8 +228,6 @@ public:
         bool acceptButton();
         bool cancelButton();
         bool off();
-        bool releaseButtons();
-
     private:
         PS3Mapi* ps3mapi;
     };
@@ -248,8 +246,9 @@ public:
 private:
     String ip;
     String _sendCommand(const String& apiArg, const String& route);
-    bool _sendCommandBool(const String& apiArg, const String& route);
+    bool _sendCommandBool(const String& apiArg, const String& route="");
     std::pair<int,int> _sendCommandTuple(const String& apiArg, const String& route);
+    std::vector<String> _sendCommandArray(const String& apiArg, const String& route);
 };
 
 #endif
