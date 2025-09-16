@@ -63,6 +63,36 @@ var classPS3Mapi_1_1Notify =
       [ "CLOCK", "classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9abac467ffb69139aacf458e104ef4f1468c", null ],
       [ "REMOTEPLAY", "classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9abaeb5782609841aa4c0a416999d5eb8cdc", null ]
     ] ],
+    [ "InfoModes", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039c", [
+      [ "HDD0_FREE", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca5705ebb193dbd7677c4f5a8a1c37dcc4", null ],
+      [ "USB0_FREE", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca1406ac0fdcf4f74316c464b5ff116463", null ],
+      [ "USB1_FREE", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca942af45d0a9b38e697fd64cfea7d1a60", null ],
+      [ "USB2_FREE", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca48e258453aa24a01d49ea97d100b8bb4", null ],
+      [ "USB3_FREE", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039cac8b7e31346b121c2d8b6cfd92a0c9974", null ],
+      [ "NTFS0_FREE", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca558ecad6f275bb42268850891417c255", null ],
+      [ "MEM_FREE", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca9d1d06154ad6eb1ee9fc5e59631aa286", null ],
+      [ "MEM_USAGE", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca35cf67a137aece4d09e455fb94b79557", null ],
+      [ "SYSCALL", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca1533d40082eeb96e7eacf0f6b1707ba7", null ],
+      [ "FAN_TEMP", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039caf808b7ca0a8c5797905c69a96d1f1b97", null ],
+      [ "FAN_MODE", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039caad601101cc083b1e25e1e512d0b9ff12", null ],
+      [ "UPTIME", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca2e54a6197e9589d19432b1560fb46494", null ],
+      [ "PLAYTIME", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039caa6cd728af07771c5e211126bc11ecc93", null ],
+      [ "RUNTIME", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca8d1cf9df5e151b31f7128fbb62779ea9", null ],
+      [ "DATETIME", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039caacfdd34c880295bbe633c3053440ea06", null ],
+      [ "GAME_ID", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca8559a85b11b092738953222ddcea8e74", null ],
+      [ "PROC_ID", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039cadd53980efc80fc335ea0a2b2beae6a74", null ],
+      [ "PSID", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca5f23aa97102dfb6ab77a3dad36cf7a50", null ],
+      [ "IDPSLV2", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca60b24d620189eaedde1fce936615add4", null ],
+      [ "IDPSEID0", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039cae55f1cda90664a68804a08014b6e6575", null ],
+      [ "FW_VERS", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039caf596adceb811f79e4206dbafe107f110", null ],
+      [ "MAC_ADDR", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca644170d217cc5231c3d83455a824b6fc", null ],
+      [ "IP_ADDR", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca31a84f18a0d58ad1af202f293a6a6080", null ],
+      [ "HOME_DIR", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca71d915d367eb518533d90e8e4c02c85a", null ],
+      [ "WM_VERS", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca4958b558ff57f64b224b885acb0a2be4", null ],
+      [ "BD_VENDOR", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca8481d4e03d5b519a05790079fd7fab0c", null ],
+      [ "RSX_CORE_CLOCK", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca2d64d3553dc533d182555545c6a88bbf", null ],
+      [ "RSX_VRAM_CLOCk", "classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039caa22331a5be971556c608cb526946e15a", null ]
+    ] ],
     [ "LEDColor", "classPS3Mapi_1_1Notify.html#a2b3319c6d7f510427763f12f947adaf4", [
       [ "RED", "classPS3Mapi_1_1Notify.html#a2b3319c6d7f510427763f12f947adaf4af8629d50db5ef7f2a342a8342f560b57", null ],
       [ "GREEN", "classPS3Mapi_1_1Notify.html#a2b3319c6d7f510427763f12f947adaf4a8d4d12c8a164a17ea564a3c0a0ff564b", null ],
@@ -80,5 +110,6 @@ var classPS3Mapi_1_1Notify =
     [ "Notify", "classPS3Mapi_1_1Notify.html#af250583a47447292e5b0597b52ae441b", null ],
     [ "buzzer", "classPS3Mapi_1_1Notify.html#a63db6a5f8b559b2e9729b6c6c2441678", null ],
     [ "led", "classPS3Mapi_1_1Notify.html#a7dd993bb5157aed7a307e1e56aca0c20", null ],
-    [ "sendNotification", "classPS3Mapi_1_1Notify.html#a7e5922b17882ae559ea8def86c5caf95", null ]
+    [ "sendNotification", "classPS3Mapi_1_1Notify.html#a7e5922b17882ae559ea8def86c5caf95", null ],
+    [ "sendSysNotification", "classPS3Mapi_1_1Notify.html#a833d031baa43a9d4b6ab09dd890e148e", null ]
 ];

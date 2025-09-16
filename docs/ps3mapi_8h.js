@@ -10,5 +10,6 @@ var ps3mapi_8h =
     [ "PS3Mapi::Registry", "classPS3Mapi_1_1Registry.html", "classPS3Mapi_1_1Registry" ],
     [ "PS3Mapi::Level", "classPS3Mapi_1_1Level.html", "classPS3Mapi_1_1Level" ],
     [ "PS3Mapi::File", "classPS3Mapi_1_1File.html", "classPS3Mapi_1_1File" ],
-    [ "PS3Mapi::Pad", "classPS3Mapi_1_1Pad.html", "classPS3Mapi_1_1Pad" ]
+    [ "PS3Mapi::Pad", "classPS3Mapi_1_1Pad.html", "classPS3Mapi_1_1Pad" ],
+    [ "PS3Mapi::Browser", "classPS3Mapi_1_1Browser.html", "classPS3Mapi_1_1Browser" ]
 ];

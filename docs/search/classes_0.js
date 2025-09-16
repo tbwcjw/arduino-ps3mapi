@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['file_0',['File',['../classPS3Mapi_1_1File.html',1,'PS3Mapi']]]
+  ['browser_0',['Browser',['../classPS3Mapi_1_1Browser.html',1,'PS3Mapi']]]
 ];

@@ -4,5 +4,8 @@ var searchData=
   ['red_5fexclaimation_1',['RED_EXCLAIMATION',['../classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9abae6bdf5a11dcf1fd88a0135903ae92e76',1,'PS3Mapi::Notify']]],
   ['redx_2',['REDX',['../classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9abaebb6a3ce0dffe9d17aad84bbd9e5abe1',1,'PS3Mapi::Notify']]],
   ['refresh_3',['REFRESH',['../classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9aba17c3087c4ca4414971add90f8dbc3347',1,'PS3Mapi::Notify']]],
-  ['remoteplay_4',['REMOTEPLAY',['../classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9abaeb5782609841aa4c0a416999d5eb8cdc',1,'PS3Mapi::Notify']]]
+  ['remoteplay_4',['REMOTEPLAY',['../classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9abaeb5782609841aa4c0a416999d5eb8cdc',1,'PS3Mapi::Notify']]],
+  ['rsx_5fcore_5fclock_5',['RSX_CORE_CLOCK',['../classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca2d64d3553dc533d182555545c6a88bbf',1,'PS3Mapi::Notify']]],
+  ['rsx_5fvram_5fclock_6',['RSX_VRAM_CLOCk',['../classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039caa22331a5be971556c608cb526946e15a',1,'PS3Mapi::Notify']]],
+  ['runtime_7',['RUNTIME',['../classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca8d1cf9df5e151b31f7128fbb62779ea9',1,'PS3Mapi::Notify']]]
 ];

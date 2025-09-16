@@ -5,6 +5,7 @@ var classPS3Mapi_1_1System =
     [ "delHistory", "classPS3Mapi_1_1System.html#a7e0f5af5858f400ee53ecd9722eaaa75", null ],
     [ "delHistoryF", "classPS3Mapi_1_1System.html#a3f5bf04347c4b54857c9a370d01b8034", null ],
     [ "disableSyscall", "classPS3Mapi_1_1System.html#a1ea39105ce120d1c5b8ccd236da97deb", null ],
+    [ "disableSyscalls", "classPS3Mapi_1_1System.html#acdc40bc64afa3ff37d783d0c27f56fa6", null ],
     [ "getBdInfo", "classPS3Mapi_1_1System.html#a6a79a713dc86d88abb3f06fbf0348c04", null ],
     [ "getClockInfo", "classPS3Mapi_1_1System.html#a6cc28931da0caebdf67c3b500cecaa72", null ],
     [ "getCoreMinVersion", "classPS3Mapi_1_1System.html#acb8374b32c546217e32e93d36071ea87", null ],

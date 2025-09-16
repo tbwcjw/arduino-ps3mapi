@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['file_0',['file',['../classPS3Mapi.html#ab9a3d795a1b492ce0eb4727083cf33b1',1,'PS3Mapi']]]
+  ['browser_0',['browser',['../classPS3Mapi.html#aa715a09f1a3af1c863cba8dcf5b6d815',1,'PS3Mapi']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['system_0',['System',['../classPS3Mapi_1_1System.html',1,'PS3Mapi']]]
+  ['registry_0',['Registry',['../classPS3Mapi_1_1Registry.html',1,'PS3Mapi']]]
 ];
