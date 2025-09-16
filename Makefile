@@ -4,11 +4,13 @@ LIB_NAME = ps3mapi
 RELEASE = $(LIB_NAME)-$(VERSION).zip
 
 EXCLUDE = "docs/*" \
+		  ".vscode/*" \
           ".git/*" \
 		  ".github/*" \
           ".gitignore" \
           "examples/internal/*" \
-          "Makefile"
+          "Makefile" \
+		  "Doxyfile"
 
 .PHONY: all release clean
 

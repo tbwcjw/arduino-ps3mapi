@@ -1,5 +1,11 @@
 #include "utils.h"
-
+/**
+ * @brief extract value of "response" key from JSON.
+ *
+ * @param jsonPayload The JSON string containing the response.
+ * @return String value as a String. returns an empty string if the key is not found
+ *         or if the value cannot be extracted. type agnostic.
+ */
 String extractResponse(const String &jsonPayload) {
     int keyIndex = jsonPayload.indexOf("\"response\"");
     if (keyIndex < 0) return "";
@@ -30,6 +36,14 @@ String extractResponse(const String &jsonPayload) {
     return String(jsonPayload.substring(valueStart, valueEnd));
 }
 
+/**
+ * @brief parse string representation of a tuple into a std::pair.
+ *
+ * if parsing fails, return [0,0].
+ *
+ * @param tupleString string containing the tuple.
+ * @return std::pair<int,int> parsed tuple as a pair of ints.
+ */
 std::pair<int,int> parseTuple(const String &tupleString) { 
     std::pair<int,int> value = {0, 0};
     
@@ -49,7 +63,12 @@ std::pair<int,int> parseTuple(const String &tupleString) {
         } 
     return value; 
 }
-
+/**
+ * @brief econde string for URL by replacing unsafe characters.
+ *
+ * @param str input string to encode.
+ * @return String encoded string.
+ */
 String urlEncode(const String &str) {
     String encoded = "";
     char buf[4];
@@ -67,6 +86,12 @@ String urlEncode(const String &str) {
     return encoded;
 }
 
+/**
+ * @brief convert json array string into a vector of Strings.
+ *
+ * @param array string containing the array.
+ * @return std::vector<String> vector with elements of the array. empty vector if invalid.
+ */
 std::vector<String> arrayToList(const String& array) {
     std::vector<String> result;
     String s = array;

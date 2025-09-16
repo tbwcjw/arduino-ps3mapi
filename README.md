@@ -1,5 +1,6 @@
 <h1>PS3Mapi Arduino Library</h1>
 <p>An Arduino library to monitor & control homebrewed PS3s running webMAN using PS3MAPI.</p>
+<p>Tested on ESP32-D0WD-V3 (ESP32-WROOM-32D) and 
 <h2>Installation</h2>
 <ul>
     <li>Clone this repository.</li>

@@ -1,3 +1,13 @@
+/*
+
+  ps3mapi.cpp - Library for controlling homebrewed PS3s running webMAN via PS3MAPI. 
+
+  Created by tbwcjw.
+
+  Released under the MIT License.
+
+*/
+
 #include "ps3mapi.h"
 #include "Arduino.h"
 
@@ -263,7 +273,15 @@ bool PS3Mapi::Pad::cancelButton() {
 bool PS3Mapi::Pad::off() {
     return ps3mapi->_sendCommandBool("pad.ps3", "off");
 }
-
+/**
+ * @brief sends a command to the ps3mapi server and retrieves string response.
+ *
+ * @param apiArg mapi command/argument to be sent "pad.ps3, ps3mapi.ps3" etc.
+ * @param route  value to be sent.
+ * @return response from the ps3, or an empty string.
+ *
+ * @see urlEncode(), extractResponse()
+ */
 String PS3Mapi::_sendCommand(const String& apiArg, const String& route) {
     HTTPClient http;
     String url = "http://" + ip + "/" + apiArg + "?" + urlEncode(route);
@@ -277,7 +295,15 @@ String PS3Mapi::_sendCommand(const String& apiArg, const String& route) {
     http.end();
     return value;
 }
-
+/**
+ * @brief sends a command to the PS3MAPI HTTP server and retrieves vector response.
+ *
+ * @param apiArg mapi command/argument to be sent "pad.ps3, ps3mapi.ps3" etc.
+ * @param route  value to be sent.
+ * @return std::vector<String> list of extracted elements, or empty vector.
+ *
+ * @see urlEncode(), arrayToList()
+ */
 std::vector<String> PS3Mapi::_sendCommandArray(const String& apiArg, const String& route) {
     HTTPClient http;
     String url = "http://" + ip + "/" + apiArg + "?" + urlEncode(route);
@@ -290,7 +316,22 @@ std::vector<String> PS3Mapi::_sendCommandArray(const String& apiArg, const Strin
     http.end();
     return result;
 }
-
+/**
+ * @brief sends a command to the PS3MAPI HTTP server and retrieves boolean response.
+ 
+ * - Returns @c false if response "0" or "false".
+ * - Returns @c true  if response "1" or "true".
+ * 
+ * http response code is used as a fallback:
+ * positive code = true, 
+ * negative code = false.
+ * 
+ * @param apiArg mapi command/argument to be sent "pad.ps3, ps3mapi.ps3" etc.
+ * @param route  value to be sent.
+ * @return bool interpreted boolean from response.
+ *
+ * @see urlEncode(), extractResponse()
+ */
 bool PS3Mapi::_sendCommandBool(const String& apiArg, const String& route) {
     HTTPClient http;
     String url = "http://" + ip + "/" + apiArg;
@@ -310,7 +351,15 @@ bool PS3Mapi::_sendCommandBool(const String& apiArg, const String& route) {
     
     return httpResponseCode > 0; //fallback to simple http response code check
 }
-
+/**
+ * @brief sends a command to the PS3MAPI HTTP server and retrieves tuple response.
+ *
+ * @param apiArg mapi command/argument to be sent "pad.ps3, ps3mapi.ps3" etc.
+ * @param route  value to be sent.
+ * @return std::pair<int,int>  tuple from response or [0,0] from @cparseTuple
+ *
+ * @see urlEncode(), parseTuple()
+ */
 std::pair<int,int> PS3Mapi::_sendCommandTuple(const String& apiArg, const String& route) {
     HTTPClient http;
     String url = "http://" + ip + "/" + apiArg + "?" + urlEncode(route);

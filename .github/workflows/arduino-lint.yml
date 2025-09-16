@@ -1,4 +1,7 @@
+name: Arduino Lint
+
 on: [push, pull_request]
+
 jobs:
   arduino-lint:
     runs-on: ubuntu-latest
