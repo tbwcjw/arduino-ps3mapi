@@ -48,7 +48,6 @@ public:
         bool setVRamClock(const int& mhz);
         bool disableSyscall(const int& sc_num=8);
         bool disableSyscalls();
-        bool enableSyscalls();
         bool pDisableSyscall8(const int& mode=0);
         bool sendReboot();
         bool sendSoftReboot();
