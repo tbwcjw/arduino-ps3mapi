@@ -47,6 +47,8 @@ public:
         bool setGpuClock(const int& mhz);
         bool setVRamClock(const int& mhz);
         bool disableSyscall(const int& sc_num=8);
+        bool disableSyscalls();
+        bool enableSyscalls();
         bool pDisableSyscall8(const int& mode=0);
         bool sendReboot();
         bool sendSoftReboot();
@@ -265,6 +267,20 @@ public:
         PS3Mapi* ps3mapi;
     };
 
+    class Browser {
+    public:
+        Browser(PS3Mapi* wm);
+        enum BrowserType {
+            BROWSER = 0,
+            SILK = 1,
+            WEBKIT = 2
+        };
+        bool local(const String& address);
+        bool external(const String& address, const BrowserType& = BROWSER);
+    private:
+        PS3Mapi* ps3mapi;
+    };
+
     Notify notify;
     Process process;
     Memory memory;
@@ -275,6 +291,7 @@ public:
     Level level;
     File file;
     Pad pad;
+    Browser browser;
 
 private:
     String ip;

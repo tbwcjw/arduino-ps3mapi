@@ -21,7 +21,8 @@ thread(this),
 registry(this), 
 level(this), 
 file(this),
-pad(this) {}
+pad(this),
+browser(this) {}
 
 PS3Mapi::System::System(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::Notify::Notify(PS3Mapi* wm) : ps3mapi(wm) {}
@@ -33,7 +34,7 @@ PS3Mapi::Registry::Registry(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::Level::Level(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::File::File(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::Pad::Pad(PS3Mapi* wm) : ps3mapi(wm) {}
-
+PS3Mapi::Browser::Browser(PS3Mapi* wm) : ps3mapi(wm) {}
 // - System -
 String PS3Mapi::System::getCoreVersion() {
     return ps3mapi->_sendCommand("ps3mapi.ps3", "CORE GETVERSION");
@@ -124,7 +125,9 @@ bool PS3Mapi::System::removeHook() {
 bool PS3Mapi::System::disableSyscall(const int& sc_num) {
     return ps3mapi->_sendCommandBool("ps3mapi.ps3", "PS3 DISABLESYSCALL " + String(sc_num));
 }
-
+bool PS3Mapi::System::disableSyscalls() {
+    return ps3mapi->_sendCommandBool("xmb.ps3$disable_syscalls");
+}
 bool PS3Mapi::System::pDisableSyscall8(const int& mode) {
     return ps3mapi->_sendCommandBool("ps3mapi.ps3", "PS3 PDISABLESYSCALL8 " + String(mode));
 }
@@ -295,6 +298,21 @@ bool PS3Mapi::Pad::cancelButton() {
 bool PS3Mapi::Pad::off() {
     return ps3mapi->_sendCommandBool("pad.ps3", "off");
 }
+
+// - Browser -
+bool PS3Mapi::Browser::local(const String& address) {
+    String addr = address;
+    if (!addr.isEmpty() && addr[0] == '/') {
+        addr = addr.substring(1);
+    }
+    return ps3mapi->_sendCommandBool("browser.ps3/" + addr);
+}
+bool PS3Mapi::Browser::external(const String& address, const BrowserType& type) {
+    if (type == WEBKIT) return ps3mapi->_sendCommandBool("webkit.ps3", address);
+    if (type == SILK)  return ps3mapi->_sendCommandBool("silk.ps3", address);
+    return ps3mapi->_sendCommandBool("browser.ps3", address); // default
+}
+
 /**
  * @brief sends a command to the ps3mapi server and retrieves string response.
  *
