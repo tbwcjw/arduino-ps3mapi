@@ -157,6 +157,10 @@ bool PS3Mapi::Notify::led(const LEDColor& color, const LEDMode& mode) {
     String cmd = "PS3 LED " + String(color) + " " + String(mode);
     return ps3mapi->_sendCommandBool("ps3mapi.ps3", cmd);
 }
+bool PS3Mapi::Notify::sendSysNotification(const InfoModes& mode) {
+    Serial.println(mode);
+    return ps3mapi->_sendCommandBool("popup.ps3/@info" + String((int)mode));
+} 
 // - Process -
 String PS3Mapi::Process::getCurrentProcID() {
     return ps3mapi->_sendCommand("ps3mapi.ps3", "PROCESS GETCURRENTPID");
@@ -254,15 +258,34 @@ String PS3Mapi::File::size(const String& file_path) {
     return ps3mapi->_sendCommand("ps3mapi.ps3", "FILE SIZE " + file_path);
 }
 // - Pad -
-void PS3Mapi::Pad::pushButtons(const std::vector<String>& buttons, float delay_float) {
+void PS3Mapi::Pad::pushButtons(const std::vector<String>& buttons, float delayFloat) {
     String result = "";
 
     for (size_t i = 0; i < buttons.size(); ++i) {
         ps3mapi->_sendCommandBool("pad.ps3", buttons[i]);
-        if (delay_float > 0.0f) {
-            delay(delay_float * 1000);
+        if (delayFloat > 0.0f) {
+            delay(delayFloat * 1000);
         }
     }
+}
+bool PS3Mapi::Pad::holdButtons(const std::vector<String>& buttons, float releaseAfter) {
+    String result = "";
+
+    for (size_t i = 0; i < buttons.size(); ++i) {
+        result += buttons[i];
+        if (i < buttons.size() - 1) {
+            result += "_";
+        }
+    }
+    ps3mapi->_sendCommandBool("pad.ps3", "hold" + result);
+
+    if(releaseAfter < 0.0f) PS3Mapi::Pad::releaseButtons(); //-1 default, immediate release
+    if(releaseAfter > 0.0f) delay(releaseAfter);
+    
+    return PS3Mapi::Pad::releaseButtons();
+}
+bool PS3Mapi::Pad::releaseButtons() {
+    return ps3mapi->_sendCommandBool("pad.ps3", "release");
 }
 bool PS3Mapi::Pad::acceptButton() {
     return ps3mapi->_sendCommandBool("pad.ps3", "accept");

@@ -1,5 +1,6 @@
 <h1>PS3Mapi Arduino Library</h1>
 <p>An Arduino library to monitor & control homebrewed PS3s running webMAN using PS3MAPI.</p>
+<p>Documentation <a href='https://tbwcjw.github.io/arduino-ps3mapi/'>here</a>.
 <h2>Installation</h2>
 <ul>
     <li>Clone this repository.</li>
@@ -34,6 +35,8 @@ void setup() {
 
     ps3.notify.led(PS3Mapi::Notify::LEDColor::GREEN, 
     PS3Mapi::Notify::LEDMode::FAST_BLINK);
+
+    ps3.notify.sendSysNotification(PS3Mapi::Notify::InfoModes::HDD0_FREE);
 }
 ```
 <h3>Buzzer Modes</h3>
@@ -88,6 +91,21 @@ enum LEDMode {
     ALT1_BLINK = 4,
     ALT2_BLINK = 5,
     ALT3_BLINK = 6
+};
+```
+<h3> System Information Modes</h3>
+
+```cpp
+enum InfoModes {
+    HDD0_FREE = 0, USB0_FREE = 1, USB1_FREE = 2, USB2_FREE = 3,
+    USB3_FREE = 4, NTFS0_FREE = 5, MEM_FREE = 6, MEM_USAGE = 7,
+    SYSCALL = 8, FAN_TEMP = 9, FAN_MODE = 10, UPTIME = 11,
+    PLAYTIME = 12, RUNTIME = 13, DATETIME = 14, GAME_ID = 15,
+    PROC_ID = 16, PSID = 17, IDPSLV2 = 18, IDPSEID0 = 19,
+    FW_VERS = 20, MAC_ADDR = 21, IP_ADDR = 22, HOME_DIR = 23,
+    WM_VERS = 24, BD_VENDOR = 25, RSX_CORE_CLOCK = 26, 
+    RSX_VRAM_CLOCk = 27
+
 };
 ```
 <h2>Pad Control Usage</h2>

@@ -135,8 +135,40 @@ public:
             CLOCK = 49,
             REMOTEPLAY = 50
         };
+        enum InfoModes {
+            HDD0_FREE = 0,
+            USB0_FREE = 1,
+            USB1_FREE = 2,
+            USB2_FREE = 3,
+            USB3_FREE = 4,
+            NTFS0_FREE = 5,
+            MEM_FREE = 6,
+            MEM_USAGE = 7,
+            SYSCALL = 8,
+            FAN_TEMP = 9,
+            FAN_MODE = 10,
+            UPTIME = 11,
+            PLAYTIME = 12,
+            RUNTIME = 13,
+            DATETIME = 14,
+            GAME_ID = 15,
+            PROC_ID = 16,
+            PSID = 17,
+            IDPSLV2 = 18,
+            IDPSEID0 = 19,
+            FW_VERS = 20,
+            MAC_ADDR = 21,
+            IP_ADDR = 22,
+            HOME_DIR = 23,
+            WM_VERS = 24,
+            BD_VENDOR = 25,
+            RSX_CORE_CLOCK = 26,
+            RSX_VRAM_CLOCk = 27
+
+        };
         Notify(PS3Mapi* wm);
         bool sendNotification(const String& message, const Icon& icon = INFO, const BuzzerMode& snd = NONE);
+        bool sendSysNotification(const InfoModes& mode = HDD0_FREE);
         bool buzzer(const BuzzerMode& mode = SINGLE);
         bool led(const LEDColor& color = GREEN, const LEDMode& mode = ON);
     private:
@@ -223,7 +255,9 @@ public:
     class Pad {
     public:
         Pad(PS3Mapi* wm);
-        void pushButtons(const std::vector<String>& buttons, float delay_float=0.0f);
+        void pushButtons(const std::vector<String>& buttons, float delayFloat=0.0f);
+        bool holdButtons(const std::vector<String>& buttons, float releaseAfter=-1.0f);
+        bool releaseButtons();
         bool acceptButton();
         bool cancelButton();
         bool off();

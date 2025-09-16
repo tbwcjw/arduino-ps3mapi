@@ -23,6 +23,10 @@ void setup() {
     ps3.notify.buzzer(PS3Mapi::Notify::BuzzerMode::TRIPLE);
     ps3.notify.led(PS3Mapi::Notify::LEDColor::YELLOW, 
     PS3Mapi::Notify::LEDMode::FAST_BLINK);
+
+    delay(1000);
+    
+    ps3.notify.sendSysNotification(PS3Mapi::Notify::InfoModes::HDD0_FREE);
 }
 
 void loop() {
