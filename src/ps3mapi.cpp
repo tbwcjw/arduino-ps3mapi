@@ -279,7 +279,6 @@ bool PS3Mapi::Pad::holdButtons(const std::vector<String>& buttons, float release
     }
     ps3mapi->_sendCommandBool("pad.ps3", "hold" + result);
 
-    if(releaseAfter < 0.0f) PS3Mapi::Pad::releaseButtons(); //-1 default, immediate release
     if(releaseAfter > 0.0f) delay(releaseAfter);
     
     return PS3Mapi::Pad::releaseButtons();

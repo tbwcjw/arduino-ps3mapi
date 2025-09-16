@@ -256,7 +256,7 @@ public:
     public:
         Pad(PS3Mapi* wm);
         void pushButtons(const std::vector<String>& buttons, float delayFloat=0.0f);
-        bool holdButtons(const std::vector<String>& buttons, float releaseAfter=-1.0f);
+        bool holdButtons(const std::vector<String>& buttons, float releaseAfter=0.0f);
         bool releaseButtons();
         bool acceptButton();
         bool cancelButton();

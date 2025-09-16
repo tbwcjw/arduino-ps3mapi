@@ -15,7 +15,7 @@ void setup() {
     Serial.println("\nWiFi connected!");
 
     std::vector<String> buttons = {"up", "down"}; 
-    ps3.pad.holdButtons(buttons, 2000.0f); //automatically releases after 2 seconds, no value or -1 releases immediately
+    ps3.pad.holdButtons(buttons, 2000.0f); //automatically releases after 2 seconds
     //ps3.pad.releaseButtons();
     ps3.pad.pushButtons({"left"}); //single button input
     ps3.pad.off(); //turn off virtual controlller
