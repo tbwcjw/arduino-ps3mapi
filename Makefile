@@ -5,6 +5,7 @@ RELEASE = $(LIB_NAME)-$(VERSION).zip
 
 EXCLUDE = "docs/*" \
           ".git/*" \
+		  ".github/*" \
           ".gitignore" \
           "examples/internal/*" \
           "Makefile"
