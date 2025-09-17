@@ -249,6 +249,7 @@ public:
         bool exists(const String& file_path);
         bool isDir(const String& file_path);
         String size(const String& file_path);
+        bool refreshNTFS();
     private:
         PS3Mapi* ps3mapi;
     };
@@ -266,19 +267,76 @@ public:
         PS3Mapi* ps3mapi;
     };
 
-    class Browser {
+    class Network {
     public:
-        Browser(PS3Mapi* wm);
+        Network(PS3Mapi* wm);
+        bool enable();
+        bool disable();
+        enum Server {
+            ALL = 0,
+            PS3MAPI = 1,
+            FTP = 2,
+            NETSRV = 3,
+            ARTEMIS = 4
+        };
+        bool startServer(const Server& server = ALL);
+        bool stopServer(const Server& server = ALL);
+        bool changeDnsPrimary(const String& address);
+        bool changeDnsSecondary(const String& address);
+    private:
+        PS3Mapi* ps3mapi;
+    };
+
+    class XMB {
+    public:
+        XMB(PS3Mapi* wm);
+        enum Category {
+            GAME = 0,
+            VIDEO = 1,
+            FRIEND = 2,
+            PSN = 3,
+            NETWORK = 4,
+            MUSIC = 5,
+            PHOTO = 6,
+            TV = 7
+        };
         enum BrowserType {
             BROWSER = 0,
             SILK = 1,
             WEBKIT = 2
         };
-        bool local(const String& address);
-        bool external(const String& address, const BrowserType& = BROWSER);
+        bool localBrowser(const String& address);
+        bool externalBrowser(const String& address, const BrowserType& = BROWSER);
+        bool goTo(const Category& category, const int& id);
+        bool reload();
+        bool refresh();
+        bool vshMenu();
+        bool sLaunchMenu();
     private:
         PS3Mapi* ps3mapi;
     };
+
+    /**
+     * @deprecated Use the XMB class instead. This will be removed in an upcoming version.
+     */
+    class Browser {
+    public:
+        Browser(PS3Mapi* wm);
+
+        [[deprecated("Use localBrowser in class XMB instead. This will be removed in an upcoming version.")]]
+        bool local(const String& address) {
+            return ps3mapi->xmb.localBrowser(address);
+        }
+
+        [[deprecated("Use externalBrowser in class XMB instead. This will be removed in an upcoming version.")]]
+        bool external(const String& address, const XMB::BrowserType& type = XMB::BROWSER) {
+            return ps3mapi->xmb.externalBrowser(address, type);
+        }
+
+    private:
+        PS3Mapi* ps3mapi;
+    };
+
 
     Notify notify;
     Process process;
@@ -290,6 +348,8 @@ public:
     Level level;
     File file;
     Pad pad;
+    Network network;
+    XMB xmb;
     Browser browser;
 
 private:

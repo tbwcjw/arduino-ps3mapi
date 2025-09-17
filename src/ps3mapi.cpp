@@ -22,6 +22,8 @@ registry(this),
 level(this), 
 file(this),
 pad(this),
+network(this),
+xmb(this),
 browser(this) {}
 
 PS3Mapi::System::System(PS3Mapi* wm) : ps3mapi(wm) {}
@@ -34,7 +36,10 @@ PS3Mapi::Registry::Registry(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::Level::Level(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::File::File(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::Pad::Pad(PS3Mapi* wm) : ps3mapi(wm) {}
+PS3Mapi::Network::Network(PS3Mapi* wm) : ps3mapi(wm) {}
+PS3Mapi::XMB::XMB(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::Browser::Browser(PS3Mapi* wm) : ps3mapi(wm) {}
+
 // - System -
 String PS3Mapi::System::getCoreVersion() {
     return ps3mapi->_sendCommand("ps3mapi.ps3", "CORE GETVERSION");
@@ -260,6 +265,9 @@ bool PS3Mapi::File::isDir(const String& file_path) {
 String PS3Mapi::File::size(const String& file_path) {
     return ps3mapi->_sendCommand("ps3mapi.ps3", "FILE SIZE " + file_path);
 }
+bool PS3Mapi::File::refreshNTFS() {
+    return ps3mapi->_sendCommandBool("refresh.ps3", "ntfs");
+}
 // - Pad -
 void PS3Mapi::Pad::pushButtons(const std::vector<String>& buttons, float delayFloat) {
     String result = "";
@@ -298,21 +306,72 @@ bool PS3Mapi::Pad::cancelButton() {
 bool PS3Mapi::Pad::off() {
     return ps3mapi->_sendCommandBool("pad.ps3", "off");
 }
+// - Network -
+bool PS3Mapi::Network::enable() {
+    return ps3mapi->_sendCommandBool("netstatus.ps3", "1");
+}
 
-// - Browser -
-bool PS3Mapi::Browser::local(const String& address) {
+bool PS3Mapi::Network::disable() {
+    return ps3mapi->_sendCommandBool("netstatus.ps3", "0");
+}
+bool PS3Mapi::Network::startServer(const Server& server) {
+    if (server == PS3MAPI) return ps3mapi->_sendCommandBool("netstatus.ps3", "start-ps3mapi");
+    else if (server == FTP) return ps3mapi->_sendCommandBool("netstatus.ps3", "start-ftp");
+    else if (server == ARTEMIS) return ps3mapi->_sendCommandBool("netstatus.ps3", "start-artemis");
+    else if (server == ALL) return ps3mapi->_sendCommandBool("netstatus.ps3", "start");
+    return ps3mapi->_sendCommandBool("netstatus.ps3", "start");
+}
+bool PS3Mapi::Network::stopServer(const Server& server) {
+    if (server == PS3MAPI) return ps3mapi->_sendCommandBool("netstatus.ps3", "stop-ps3mapi");
+    else if (server == FTP) return ps3mapi->_sendCommandBool("netstatus.ps3", "stop-ftp");
+    else if (server == ARTEMIS) return ps3mapi->_sendCommandBool("netstatus.ps3", "stop-artemis");
+    else if (server == ALL) return ps3mapi->_sendCommandBool("netstatus.ps3", "stop");
+    return ps3mapi->_sendCommandBool("netstatus.ps3", "stop");
+}
+bool PS3Mapi::Network::changeDnsPrimary(const String& address) {
+    return ps3mapi->_sendCommandBool("netstatus.ps3", "dns1=" + address);
+}
+bool PS3Mapi::Network::changeDnsSecondary(const String& address) {
+    return ps3mapi->_sendCommandBool("netstatus.ps3", "dns2=" + address);
+}
+// - XMB -
+bool PS3Mapi::XMB::goTo(const Category& category, const int& id) {
+    ///play.ps3?col=<col-name>&seg=<xmb-item-id>
+    String col;
+    if (category == GAME) col = "game";
+    else if (category == VIDEO) col = "video";
+    else if (category == FRIEND) col = "friend";
+    else if (category == PSN) col = "psn";
+    else if (category == NETWORK) col = "network";
+    else if (category == MUSIC) col = "music";
+    else if (category == PHOTO) col = "photo";
+    else if (category == TV) col = "tv";
+    return ps3mapi->_sendCommandBool("play.ps3", "col=" + col + "&seg=" + String(id));
+}
+bool PS3Mapi::XMB::reload() {
+    return ps3mapi->_sendCommandBool("reloadxmb.ps3");
+}
+bool PS3Mapi::XMB::refresh() {
+    return ps3mapi->_sendCommandBool("refresh.ps3", "xmb");
+}
+bool PS3Mapi::XMB::vshMenu() {
+    return ps3mapi->_sendCommandBool("xmb.ps3$vsh_menu");
+}
+bool PS3Mapi::XMB::sLaunchMenu() {
+    return ps3mapi->_sendCommandBool("xmb.ps3$slaunch");
+}
+bool PS3Mapi::XMB::localBrowser(const String& address) {
     String addr = address;
     if (!addr.isEmpty() && addr[0] == '/') {
         addr = addr.substring(1);
     }
     return ps3mapi->_sendCommandBool("browser.ps3/" + addr);
 }
-bool PS3Mapi::Browser::external(const String& address, const BrowserType& type) {
+bool PS3Mapi::XMB::externalBrowser(const String& address, const BrowserType& type) {
     if (type == WEBKIT) return ps3mapi->_sendCommandBool("webkit.ps3", address);
-    if (type == SILK)  return ps3mapi->_sendCommandBool("silk.ps3", address);
+    else if (type == SILK)  return ps3mapi->_sendCommandBool("silk.ps3", address);
     return ps3mapi->_sendCommandBool("browser.ps3", address); // default
 }
-
 /**
  * @brief sends a command to the ps3mapi server and retrieves string response.
  *
