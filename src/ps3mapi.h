@@ -53,6 +53,17 @@ public:
         bool sendSoftReboot();
         bool sendHardReboot();
         bool sendShutdown();
+        enum FanMode {
+            DYNAMIC = 0,
+            MANUAL = 1,
+            AUTO = 2,
+            SYSCON = 3,
+        };
+        bool changeFanMode(const FanMode& mode);
+        bool setTargetTemp(const int& celcius);
+        bool setFanSpeed(const int& percent);
+        bool increaseFanSpeed();
+        bool decreaseFanSpeed();
     private:
         PS3Mapi* ps3mapi;
     };
@@ -250,6 +261,8 @@ public:
         bool isDir(const String& file_path);
         String size(const String& file_path);
         bool refreshNTFS();
+        bool download(const String& address, const String& destination = "/dev_hdd0/packages");
+        bool installPkg(const String& address, const bool& deletePkgFile = false);
     private:
         PS3Mapi* ps3mapi;
     };
@@ -315,7 +328,6 @@ public:
     private:
         PS3Mapi* ps3mapi;
     };
-
     /**
      * @deprecated Use the XMB class instead. This will be removed in an upcoming version.
      */
@@ -337,7 +349,6 @@ public:
         PS3Mapi* ps3mapi;
     };
 
-
     Notify notify;
     Process process;
     Memory memory;
@@ -351,7 +362,6 @@ public:
     Network network;
     XMB xmb;
     Browser browser;
-
 private:
     String ip;
     String _sendCommand(const String& apiArg, const String& route);

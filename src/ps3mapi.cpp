@@ -39,7 +39,6 @@ PS3Mapi::Pad::Pad(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::Network::Network(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::XMB::XMB(PS3Mapi* wm) : ps3mapi(wm) {}
 PS3Mapi::Browser::Browser(PS3Mapi* wm) : ps3mapi(wm) {}
-
 // - System -
 String PS3Mapi::System::getCoreVersion() {
     return ps3mapi->_sendCommand("ps3mapi.ps3", "CORE GETVERSION");
@@ -151,6 +150,24 @@ bool PS3Mapi::System::sendHardReboot() {
 
 bool PS3Mapi::System::sendShutdown() {
     return ps3mapi->_sendCommandBool("ps3mapi.ps3", "PS3 SHUTDOWN");
+}
+bool PS3Mapi::System::changeFanMode(const FanMode& mode) {
+    if(mode == MANUAL) return ps3mapi->_sendCommandBool("cpursx.ps3", "man");
+    else if(mode == SYSCON) return ps3mapi->_sendCommandBool("cpursx.ps3", "sys");
+    else if(mode == AUTO) return ps3mapi->_sendCommandBool("cpursx.ps3", "auto");
+    return ps3mapi->_sendCommandBool("cpursx.ps3", "dyn"); //default
+}
+bool PS3Mapi::System::setTargetTemp(const int& celcius) {
+    return ps3mapi->_sendCommandBool("cpursx.ps3", "max="+celcius);
+}
+bool PS3Mapi::System::setFanSpeed(const int& celcius) {
+    return ps3mapi->_sendCommandBool("cpursx.ps3", "fan="+celcius);
+}
+bool PS3Mapi::System::increaseFanSpeed() {
+    return ps3mapi->_sendCommandBool("cpursx.ps3", "up");
+}
+bool PS3Mapi::System::decreaseFanSpeed() {
+    return ps3mapi->_sendCommandBool("cpursx.ps3", "down");
 }
 // - Notify - 
 bool PS3Mapi::Notify::sendNotification(const String& message, const Icon& icon, const BuzzerMode& snd) {
@@ -268,6 +285,16 @@ String PS3Mapi::File::size(const String& file_path) {
 bool PS3Mapi::File::refreshNTFS() {
     return ps3mapi->_sendCommandBool("refresh.ps3", "ntfs");
 }
+bool PS3Mapi::File::download(const String& address, const String& destination) {
+    return ps3mapi->_sendCommandBool("xmb.ps3/download.ps3", "to=" + destination + "&url=" + address);
+}
+bool PS3Mapi::File::installPkg(const String& path, const bool& deleteFile) {
+    if(deleteFile) {
+        return ps3mapi->_sendCommandBool("install.ps3/" + path);
+    } else {
+        return ps3mapi->_sendCommandBool("install_ps3/" + path);
+    }
+}
 // - Pad -
 void PS3Mapi::Pad::pushButtons(const std::vector<String>& buttons, float delayFloat) {
     String result = "";
@@ -336,7 +363,6 @@ bool PS3Mapi::Network::changeDnsSecondary(const String& address) {
 }
 // - XMB -
 bool PS3Mapi::XMB::goTo(const Category& category, const int& id) {
-    ///play.ps3?col=<col-name>&seg=<xmb-item-id>
     String col;
     if (category == GAME) col = "game";
     else if (category == VIDEO) col = "video";
@@ -372,6 +398,7 @@ bool PS3Mapi::XMB::externalBrowser(const String& address, const BrowserType& typ
     else if (type == SILK)  return ps3mapi->_sendCommandBool("silk.ps3", address);
     return ps3mapi->_sendCommandBool("browser.ps3", address); // default
 }
+
 /**
  * @brief sends a command to the ps3mapi server and retrieves string response.
  *
