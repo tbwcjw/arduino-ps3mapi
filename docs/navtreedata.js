@@ -25,11 +25,12 @@
 var NAVTREE =
 [
   [ "arduino-ps3mapi", "index.html", [
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
@@ -48,7 +49,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"annotated.html",
+"classPS3Mapi_1_1XMB.html#a34a9c530b496fea57c7835fa3018fae8af05d13cf05350ed930f8d4699913be8f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

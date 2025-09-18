@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">arduino-ps3mapi<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">arduino-ps3mapi<span id="projectnumber">&#160;0.1.1</span>
    </div>
    <div id="projectbrief">An Arduino library to monitor &amp; control homebrewed PS3s running webMAN using PS3MAPI.</div>
   </td>
@@ -109,10 +109,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4107f27796a72fe5fe400000150f946f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f247ded85ee1b8aa34d37112a4b98ae" id="r_a0f247ded85ee1b8aa34d37112a4b98ae"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1File.html#a0f247ded85ee1b8aa34d37112a4b98ae">size</a> (const String &amp;file_path)</td></tr>
 <tr class="separator:a0f247ded85ee1b8aa34d37112a4b98ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaf10359d5568c8f538efbf13f6477a8" id="r_afaf10359d5568c8f538efbf13f6477a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1File.html#afaf10359d5568c8f538efbf13f6477a8">refreshNTFS</a> ()</td></tr>
+<tr class="separator:afaf10359d5568c8f538efbf13f6477a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca48cb30df5cd0f85aaa2e039441e37" id="r_a5ca48cb30df5cd0f85aaa2e039441e37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1File.html#a5ca48cb30df5cd0f85aaa2e039441e37">download</a> (const String &amp;address, const String &amp;destination=&quot;/dev_hdd0/packages&quot;)</td></tr>
+<tr class="separator:a5ca48cb30df5cd0f85aaa2e039441e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8825701a2ef7e22790e0782330d35ce" id="r_ab8825701a2ef7e22790e0782330d35ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1File.html#ab8825701a2ef7e22790e0782330d35ce">installPkg</a> (const String &amp;address, const bool &amp;deleteFile=false)</td></tr>
+<tr class="separator:ab8825701a2ef7e22790e0782330d35ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8h_source.html#l00246">246</a> of file <a class="el" href="ps3mapi_8h_source.html">ps3mapi.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8h_source.html#l00257">257</a> of file <a class="el" href="ps3mapi_8h_source.html">ps3mapi.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aee3bb151ffcd40069680b3066517ebbf" name="aee3bb151ffcd40069680b3066517ebbf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee3bb151ffcd40069680b3066517ebbf">&#9670;&#160;</a></span>File()</h2>
@@ -130,11 +136,41 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00035">35</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00036">36</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5ca48cb30df5cd0f85aaa2e039441e37" name="a5ca48cb30df5cd0f85aaa2e039441e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca48cb30df5cd0f85aaa2e039441e37">&#9670;&#160;</a></span>download()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PS3Mapi::File::download </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>destination</em> = <code>&quot;/dev_hdd0/packages&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00286">286</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a256377a8e616e0fb1c9d1795d8529658" name="a256377a8e616e0fb1c9d1795d8529658"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a256377a8e616e0fb1c9d1795d8529658">&#9670;&#160;</a></span>exists()</h2>
 
@@ -151,7 +187,37 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00253">253</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00273">273</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab8825701a2ef7e22790e0782330d35ce" name="ab8825701a2ef7e22790e0782330d35ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8825701a2ef7e22790e0782330d35ce">&#9670;&#160;</a></span>installPkg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PS3Mapi::File::installPkg </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>deleteFile</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00289">289</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -171,7 +237,26 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00257">257</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00277">277</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afaf10359d5568c8f538efbf13f6477a8" name="afaf10359d5568c8f538efbf13f6477a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaf10359d5568c8f538efbf13f6477a8">&#9670;&#160;</a></span>refreshNTFS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PS3Mapi::File::refreshNTFS </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00283">283</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -191,7 +276,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00260">260</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00280">280</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>

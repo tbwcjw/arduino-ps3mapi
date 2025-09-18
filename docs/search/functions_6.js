@@ -23,5 +23,6 @@ var searchData=
   ['getserverversion_20',['getServerVersion',['../classPS3Mapi_1_1System.html#a23993cb7bb095599b81e90c179889e97',1,'PS3Mapi::System']]],
   ['getsysinfo_21',['getSysInfo',['../classPS3Mapi_1_1System.html#a7b6cb4110d1ec24f3482440ca6317a9a',1,'PS3Mapi::System']]],
   ['gettemp_22',['getTemp',['../classPS3Mapi_1_1System.html#a9f86c8f1f3c1f7fe410f4aeeecfec802',1,'PS3Mapi::System']]],
-  ['getvshpluginfo_23',['getVshPlugInfo',['../classPS3Mapi_1_1Module.html#aebbbcf87cef572254decfe4ded3a745b',1,'PS3Mapi::Module']]]
+  ['getvshpluginfo_23',['getVshPlugInfo',['../classPS3Mapi_1_1Module.html#aebbbcf87cef572254decfe4ded3a745b',1,'PS3Mapi::Module']]],
+  ['goto_24',['goTo',['../classPS3Mapi_1_1XMB.html#ac13c7c6d3f4607529ce4700ff2c35958',1,'PS3Mapi::XMB']]]
 ];

@@ -2,11 +2,12 @@ var searchData=
 [
   ['send_0',['SEND',['../classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9aba962e7f428659bce17f7d5298cbb87f94',1,'PS3Mapi::Notify']]],
   ['signin_1',['SIGNIN',['../classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9abaedf5d0f154c64917ce8a6ed5b3b4d02f',1,'PS3Mapi::Notify']]],
-  ['silk_2',['SILK',['../classPS3Mapi_1_1Browser.html#a0bf8739c461fb10c25c781d0097c8221abff3873cd31f58b71cc2a2ca93052148',1,'PS3Mapi::Browser']]],
+  ['silk_2',['SILK',['../classPS3Mapi_1_1XMB.html#a0bedbd6e89edbb4170e6324f1c9b1678a0aee2e09906b5442f2117f579b70abd3',1,'PS3Mapi::XMB']]],
   ['silver_3',['SILVER',['../classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9aba42136fe5f5f0c724848f7193fd148bfb',1,'PS3Mapi::Notify']]],
   ['single_4',['SINGLE',['../classPS3Mapi_1_1Notify.html#a961fe0f8c218c7ee8d3b078baf39bf07a386cb00734007125fbd718829d8ebd03',1,'PS3Mapi::Notify']]],
   ['slow_5fblink_5',['SLOW_BLINK',['../classPS3Mapi_1_1Notify.html#aef38b199c004427f59e9b4654df84c8dad858b3e84aa45c4d49e074a8f046bc31',1,'PS3Mapi::Notify']]],
   ['speechbubble_6',['SPEECHBUBBLE',['../classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9abac735454f3459295dde8ca11a10be31d6',1,'PS3Mapi::Notify']]],
   ['star_5ftrophy_7',['STAR_TROPHY',['../classPS3Mapi_1_1Notify.html#af7a8176159cdc9064d455d7c9721a9aba8d6f55b2506809de477432f5489b3381',1,'PS3Mapi::Notify']]],
-  ['syscall_8',['SYSCALL',['../classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca1533d40082eeb96e7eacf0f6b1707ba7',1,'PS3Mapi::Notify']]]
+  ['syscall_8',['SYSCALL',['../classPS3Mapi_1_1Notify.html#ae1aa2250e7b4a4e1b0ccba5e2d89039ca1533d40082eeb96e7eacf0f6b1707ba7',1,'PS3Mapi::Notify']]],
+  ['syscon_9',['SYSCON',['../classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279a39e1783a16a3720c26d857a361460ef1',1,'PS3Mapi::System']]]
 ];

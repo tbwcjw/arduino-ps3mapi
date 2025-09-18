@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">arduino-ps3mapi<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">arduino-ps3mapi<span id="projectnumber">&#160;0.1.1</span>
    </div>
    <div id="projectbrief">An Arduino library to monitor &amp; control homebrewed PS3s running webMAN using PS3MAPI.</div>
   </td>
@@ -91,6 +91,7 @@ $(document).ready(function(){initNavTree('classPS3Mapi_1_1System.html',''); init
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classPS3Mapi_1_1System-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">PS3Mapi::System Class Reference</div></div>
@@ -99,6 +100,15 @@ $(document).ready(function(){initNavTree('classPS3Mapi_1_1System.html',''); init
 
 <p><code>#include &lt;<a class="el" href="ps3mapi_8h_source.html">ps3mapi.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a27d145c112aba00ac638141b10810279" id="r_a27d145c112aba00ac638141b10810279"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279">FanMode</a> { <a class="el" href="classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279a9a417929910f52a0a0e9b75bfdd1d8eb">DYNAMIC</a> = 0
+, <a class="el" href="classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279abbf022c4f3b71d4c6c11be8043b3065d">MANUAL</a> = 1
+, <a class="el" href="classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279a3e07ae668317c1ba5a577d63fe9f4b7e">AUTO</a> = 2
+, <a class="el" href="classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279a39e1783a16a3720c26d857a361460ef1">SYSCON</a> = 3
+ }</td></tr>
+<tr class="separator:a27d145c112aba00ac638141b10810279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae94c84108634f23ab82d0c116fac3c39" id="r_ae94c84108634f23ab82d0c116fac3c39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1System.html#ae94c84108634f23ab82d0c116fac3c39">System</a> (<a class="el" href="classPS3Mapi.html">PS3Mapi</a> *wm)</td></tr>
@@ -165,11 +175,44 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aef96b1d3ec87b269c352e64405339ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace81329baced7ffbb796efc8950dc5aa" id="r_ace81329baced7ffbb796efc8950dc5aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1System.html#ace81329baced7ffbb796efc8950dc5aa">sendShutdown</a> ()</td></tr>
 <tr class="separator:ace81329baced7ffbb796efc8950dc5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d3cef721651d61b4c5fea496bc2f218" id="r_a6d3cef721651d61b4c5fea496bc2f218"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1System.html#a6d3cef721651d61b4c5fea496bc2f218">changeFanMode</a> (const <a class="el" href="classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279">FanMode</a> &amp;mode)</td></tr>
+<tr class="separator:a6d3cef721651d61b4c5fea496bc2f218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aea23407c19ac961f298c7d28445c19" id="r_a7aea23407c19ac961f298c7d28445c19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1System.html#a7aea23407c19ac961f298c7d28445c19">setTargetTemp</a> (const int &amp;celcius)</td></tr>
+<tr class="separator:a7aea23407c19ac961f298c7d28445c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f2cde01a96347dd417b0a6087b6ea1e" id="r_a2f2cde01a96347dd417b0a6087b6ea1e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1System.html#a2f2cde01a96347dd417b0a6087b6ea1e">setFanSpeed</a> (const int &amp;percent)</td></tr>
+<tr class="separator:a2f2cde01a96347dd417b0a6087b6ea1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabc05316ad9bda3b62e74e252f57bf98" id="r_aabc05316ad9bda3b62e74e252f57bf98"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1System.html#aabc05316ad9bda3b62e74e252f57bf98">increaseFanSpeed</a> ()</td></tr>
+<tr class="separator:aabc05316ad9bda3b62e74e252f57bf98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef53c7d3254ad7ce74a9c0a14b23c1f" id="r_a7ef53c7d3254ad7ce74a9c0a14b23c1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1System.html#a7ef53c7d3254ad7ce74a9c0a14b23c1f">decreaseFanSpeed</a> ()</td></tr>
+<tr class="separator:a7ef53c7d3254ad7ce74a9c0a14b23c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="ps3mapi_8h_source.html#l00022">22</a> of file <a class="el" href="ps3mapi_8h_source.html">ps3mapi.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a27d145c112aba00ac638141b10810279" name="a27d145c112aba00ac638141b10810279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d145c112aba00ac638141b10810279">&#9670;&#160;</a></span>FanMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279">PS3Mapi::System::FanMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a27d145c112aba00ac638141b10810279a9a417929910f52a0a0e9b75bfdd1d8eb" name="a27d145c112aba00ac638141b10810279a9a417929910f52a0a0e9b75bfdd1d8eb"></a>DYNAMIC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a27d145c112aba00ac638141b10810279abbf022c4f3b71d4c6c11be8043b3065d" name="a27d145c112aba00ac638141b10810279abbf022c4f3b71d4c6c11be8043b3065d"></a>MANUAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a27d145c112aba00ac638141b10810279a3e07ae668317c1ba5a577d63fe9f4b7e" name="a27d145c112aba00ac638141b10810279a3e07ae668317c1ba5a577d63fe9f4b7e"></a>AUTO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a27d145c112aba00ac638141b10810279a39e1783a16a3720c26d857a361460ef1" name="a27d145c112aba00ac638141b10810279a39e1783a16a3720c26d857a361460ef1"></a>SYSCON&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8h_source.html#l00056">56</a> of file <a class="el" href="ps3mapi_8h_source.html">ps3mapi.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae94c84108634f23ab82d0c116fac3c39" name="ae94c84108634f23ab82d0c116fac3c39"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae94c84108634f23ab82d0c116fac3c39">&#9670;&#160;</a></span>System()</h2>
 
@@ -186,11 +229,31 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00027">27</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00028">28</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6d3cef721651d61b4c5fea496bc2f218" name="a6d3cef721651d61b4c5fea496bc2f218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d3cef721651d61b4c5fea496bc2f218">&#9670;&#160;</a></span>changeFanMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PS3Mapi::System::changeFanMode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279">FanMode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00153">153</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+
+</div>
+</div>
 <a id="ae991aedfea638220d2c628f0c469bb54" name="ae991aedfea638220d2c628f0c469bb54"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae991aedfea638220d2c628f0c469bb54">&#9670;&#160;</a></span>checkSyscall()</h2>
 
@@ -207,7 +270,26 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00087">87</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00090">90</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7ef53c7d3254ad7ce74a9c0a14b23c1f" name="a7ef53c7d3254ad7ce74a9c0a14b23c1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef53c7d3254ad7ce74a9c0a14b23c1f">&#9670;&#160;</a></span>decreaseFanSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PS3Mapi::System::decreaseFanSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00168">168</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -226,7 +308,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00115">115</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00118">118</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -245,7 +327,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00118">118</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00121">121</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -265,7 +347,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00125">125</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00128">128</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -284,7 +366,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00128">128</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00131">131</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -304,7 +386,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00071">71</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00074">74</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -323,7 +405,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00079">79</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00082">82</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -342,7 +424,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00047">47</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00050">50</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -361,7 +443,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00039">39</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00042">42</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -380,7 +462,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00059">59</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00062">62</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -399,7 +481,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00062">62</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00065">65</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -418,7 +500,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00055">55</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00058">58</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -437,7 +519,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00097">97</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00100">100</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +538,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00075">75</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00078">78</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -475,7 +557,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00103">103</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00106">106</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -494,7 +576,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00094">94</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00097">97</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -513,7 +595,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00051">51</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00054">54</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -532,7 +614,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00043">43</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00046">46</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -552,7 +634,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00066">66</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00069">69</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -571,7 +653,26 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00083">83</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00086">86</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aabc05316ad9bda3b62e74e252f57bf98" name="aabc05316ad9bda3b62e74e252f57bf98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabc05316ad9bda3b62e74e252f57bf98">&#9670;&#160;</a></span>increaseFanSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PS3Mapi::System::increaseFanSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00165">165</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -590,7 +691,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00091">91</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00094">94</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -610,7 +711,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00131">131</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00134">134</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -629,7 +730,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00121">121</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00124">124</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -648,7 +749,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00143">143</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00146">146</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -667,7 +768,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00135">135</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00138">138</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -686,7 +787,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00147">147</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00150">150</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -705,7 +806,27 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00139">139</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00142">142</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2f2cde01a96347dd417b0a6087b6ea1e" name="a2f2cde01a96347dd417b0a6087b6ea1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f2cde01a96347dd417b0a6087b6ea1e">&#9670;&#160;</a></span>setFanSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PS3Mapi::System::setFanSpeed </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>percent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00162">162</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -725,7 +846,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00109">109</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00112">112</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -755,7 +876,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00100">100</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00103">103</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -785,7 +906,27 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00106">106</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00109">109</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7aea23407c19ac961f298c7d28445c19" name="a7aea23407c19ac961f298c7d28445c19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aea23407c19ac961f298c7d28445c19">&#9670;&#160;</a></span>setTargetTemp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PS3Mapi::System::setTargetTemp </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>celcius</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00159">159</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>
@@ -805,7 +946,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00112">112</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8cpp_source.html#l00115">115</a> of file <a class="el" href="ps3mapi_8cpp_source.html">ps3mapi.cpp</a>.</p>
 
 </div>
 </div>

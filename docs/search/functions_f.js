@@ -7,11 +7,16 @@ var searchData=
   ['sendsoftreboot_4',['sendSoftReboot',['../classPS3Mapi_1_1System.html#a4f9e8791d8a67d841ee63035a6676221',1,'PS3Mapi::System']]],
   ['sendsysnotification_5',['sendSysNotification',['../classPS3Mapi_1_1Notify.html#a833d031baa43a9d4b6ab09dd890e148e',1,'PS3Mapi::Notify']]],
   ['set_6',['set',['../classPS3Mapi_1_1Registry.html#a1a00bd27f686f49ece89f8ad05fc5357',1,'PS3Mapi::Registry']]],
-  ['setgpuclock_7',['setGpuClock',['../classPS3Mapi_1_1System.html#acffce3e0d6575bbfded7bf8366038c85',1,'PS3Mapi::System']]],
-  ['setidps_8',['setIdps',['../classPS3Mapi_1_1System.html#a311aefecfbb372776581ab0eab153a2b',1,'PS3Mapi::System']]],
-  ['setmemory_9',['setMemory',['../classPS3Mapi_1_1Memory.html#a3380979a7204119215454542104d6556',1,'PS3Mapi::Memory']]],
-  ['setpsid_10',['setPsid',['../classPS3Mapi_1_1System.html#a217e7d734018948398d4e005ba80d3c4',1,'PS3Mapi::System']]],
-  ['setvramclock_11',['setVRamClock',['../classPS3Mapi_1_1System.html#aff59d8972774d4cf6ba78b83873d047a',1,'PS3Mapi::System']]],
-  ['size_12',['size',['../classPS3Mapi_1_1File.html#a0f247ded85ee1b8aa34d37112a4b98ae',1,'PS3Mapi::File']]],
-  ['system_13',['System',['../classPS3Mapi_1_1System.html#ae94c84108634f23ab82d0c116fac3c39',1,'PS3Mapi::System']]]
+  ['setfanspeed_7',['setFanSpeed',['../classPS3Mapi_1_1System.html#a2f2cde01a96347dd417b0a6087b6ea1e',1,'PS3Mapi::System']]],
+  ['setgpuclock_8',['setGpuClock',['../classPS3Mapi_1_1System.html#acffce3e0d6575bbfded7bf8366038c85',1,'PS3Mapi::System']]],
+  ['setidps_9',['setIdps',['../classPS3Mapi_1_1System.html#a311aefecfbb372776581ab0eab153a2b',1,'PS3Mapi::System']]],
+  ['setmemory_10',['setMemory',['../classPS3Mapi_1_1Memory.html#a3380979a7204119215454542104d6556',1,'PS3Mapi::Memory']]],
+  ['setpsid_11',['setPsid',['../classPS3Mapi_1_1System.html#a217e7d734018948398d4e005ba80d3c4',1,'PS3Mapi::System']]],
+  ['settargettemp_12',['setTargetTemp',['../classPS3Mapi_1_1System.html#a7aea23407c19ac961f298c7d28445c19',1,'PS3Mapi::System']]],
+  ['setvramclock_13',['setVRamClock',['../classPS3Mapi_1_1System.html#aff59d8972774d4cf6ba78b83873d047a',1,'PS3Mapi::System']]],
+  ['size_14',['size',['../classPS3Mapi_1_1File.html#a0f247ded85ee1b8aa34d37112a4b98ae',1,'PS3Mapi::File']]],
+  ['slaunchmenu_15',['sLaunchMenu',['../classPS3Mapi_1_1XMB.html#abd6fc5407c72ac0f34b85dd4f72b3847',1,'PS3Mapi::XMB']]],
+  ['startserver_16',['startServer',['../classPS3Mapi_1_1Network.html#ad9bd82c0204c6c270a9c8707107a6de8',1,'PS3Mapi::Network']]],
+  ['stopserver_17',['stopServer',['../classPS3Mapi_1_1Network.html#a9ff1f1679d1b2af95f305b0e0fda9c1e',1,'PS3Mapi::Network']]],
+  ['system_18',['System',['../classPS3Mapi_1_1System.html#ae94c84108634f23ab82d0c116fac3c39',1,'PS3Mapi::System']]]
 ];
