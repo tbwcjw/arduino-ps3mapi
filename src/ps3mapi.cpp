@@ -7,7 +7,6 @@
   Released under the MIT License.
 
 */
-
 #include "ps3mapi.h"
 #include "Arduino.h"
 
@@ -183,7 +182,6 @@ bool PS3Mapi::Notify::led(const LEDColor& color, const LEDMode& mode) {
     return ps3mapi->_sendCommandBool("ps3mapi.ps3", cmd);
 }
 bool PS3Mapi::Notify::sendSysNotification(const InfoModes& mode) {
-    Serial.println(mode);
     return ps3mapi->_sendCommandBool("popup.ps3/@info" + String((int)mode));
 } 
 // - Process -
@@ -462,9 +460,8 @@ bool PS3Mapi::_sendCommandBool(const String& apiArg, const String& route) {
     HTTPClient http;
     String url = "http://" + ip + "/" + apiArg;
     if (route.length() > 0) url += "?" + urlEncode(route);
-    Serial.println("URL " + url);
-
     http.begin(url);
+
     int httpResponseCode = http.GET();
     if(httpResponseCode < 0) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
 
@@ -490,7 +487,7 @@ std::pair<int,int> PS3Mapi::_sendCommandTuple(const String& apiArg, const String
     HTTPClient http;
     String url = "http://" + ip + "/" + apiArg + "?" + urlEncode(route);
     http.begin(url);
-
+    
     int httpResponseCode = http.GET();
     if (httpResponseCode < 0) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
 

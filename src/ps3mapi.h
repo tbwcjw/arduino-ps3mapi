@@ -262,7 +262,7 @@ public:
         String size(const String& file_path);
         bool refreshNTFS();
         bool download(const String& address, const String& destination = "/dev_hdd0/packages");
-        bool installPkg(const String& address, const bool& deletePkgFile = false);
+        bool installPkg(const String& address, const bool& deleteFile = false);
     private:
         PS3Mapi* ps3mapi;
     };
@@ -348,11 +348,11 @@ public:
     private:
         PS3Mapi* ps3mapi;
     };
-
+    String ip;    
+    System system;
     Notify notify;
     Process process;
     Memory memory;
-    System system;
     Module module;
     Thread thread;
     Registry registry;
@@ -363,7 +363,6 @@ public:
     XMB xmb;
     Browser browser;
 private:
-    String ip;
     String _sendCommand(const String& apiArg, const String& route);
     bool _sendCommandBool(const String& apiArg, const String& route="");
     std::pair<int,int> _sendCommandTuple(const String& apiArg, const String& route);
