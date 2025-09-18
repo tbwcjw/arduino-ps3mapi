@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['memory_0',['Memory',['../classPS3Mapi_1_1Memory.html#a083fc75d2effb98eb56b2cfd1ee056a3',1,'PS3Mapi::Memory']]],
-  ['module_1',['Module',['../classPS3Mapi_1_1Module.html#a693657cafeab3a07d5ee8b81e2c2269a',1,'PS3Mapi::Module']]]
+  ['led_0',['led',['../classPS3Mapi_1_1Notify.html#a7dd993bb5157aed7a307e1e56aca0c20',1,'PS3Mapi::Notify']]],
+  ['level_1',['Level',['../classPS3Mapi_1_1Level.html#a1f165cbe0af3c65706b1f7d37490c413',1,'PS3Mapi::Level']]],
+  ['load_2',['load',['../classPS3Mapi_1_1Module.html#abd77b5d228bc190841dbe068e7a9ed6c',1,'PS3Mapi::Module']]],
+  ['loadvshplugs_3',['loadVshPlugs',['../classPS3Mapi_1_1Module.html#a91a890af72f698cf550da23eefd5a772',1,'PS3Mapi::Module']]],
+  ['local_4',['local',['../classPS3Mapi_1_1Browser.html#a4c7349f6790d1c8c769dbdc8ce47c596',1,'PS3Mapi::Browser']]]
 ];
