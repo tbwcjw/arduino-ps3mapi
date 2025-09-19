@@ -7,7 +7,7 @@ var classPS3Mapi_1_1System =
       [ "SYSCON", "classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279a39e1783a16a3720c26d857a361460ef1", null ]
     ] ],
     [ "System", "classPS3Mapi_1_1System.html#ae94c84108634f23ab82d0c116fac3c39", null ],
-    [ "changeFanMode", "classPS3Mapi_1_1System.html#a6d3cef721651d61b4c5fea496bc2f218", null ],
+    [ "changeFanMode", "classPS3Mapi_1_1System.html#a953a50f38d2d40a68dde6091aee587c3", null ],
     [ "checkSyscall", "classPS3Mapi_1_1System.html#ae991aedfea638220d2c628f0c469bb54", null ],
     [ "decreaseFanSpeed", "classPS3Mapi_1_1System.html#a7ef53c7d3254ad7ce74a9c0a14b23c1f", null ],
     [ "delHistory", "classPS3Mapi_1_1System.html#a7e0f5af5858f400ee53ecd9722eaaa75", null ],
@@ -18,6 +18,8 @@ var classPS3Mapi_1_1System =
     [ "getClockInfo", "classPS3Mapi_1_1System.html#a6cc28931da0caebdf67c3b500cecaa72", null ],
     [ "getCoreMinVersion", "classPS3Mapi_1_1System.html#acb8374b32c546217e32e93d36071ea87", null ],
     [ "getCoreVersion", "classPS3Mapi_1_1System.html#a33ba211501646e9efd3a0dc5a44ff658", null ],
+    [ "getFanMode", "classPS3Mapi_1_1System.html#a70ba8c63ce9f57022ad23c8c5d09ac48", null ],
+    [ "getFanSpeed", "classPS3Mapi_1_1System.html#a202945e20d1519a508a2cae3f226b496", null ],
     [ "getFirmwareMinVersion", "classPS3Mapi_1_1System.html#affcaaf08022d6204cae929135454894c", null ],
     [ "getFirmwareType", "classPS3Mapi_1_1System.html#ab8a34dcd6dc452ee10bd3f584ef117f4", null ],
     [ "getFirmwareVersion", "classPS3Mapi_1_1System.html#a1caa954d107933a5e9c30b750a5959ca", null ],

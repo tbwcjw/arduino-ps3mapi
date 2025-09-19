@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"classPS3Mapi_1_1XMB.html#a34a9c530b496fea57c7835fa3018fae8a48787b00351a44eebb30579d522f0de2":[1,0,0,12,1,4],
+"classPS3Mapi_1_1XMB.html#a34a9c530b496fea57c7835fa3018fae8a8837920964caee8573801d7fcfc0ebcb":[1,0,0,12,1,3],
+"classPS3Mapi_1_1XMB.html#a34a9c530b496fea57c7835fa3018fae8ae26441961923fc7d3f4d6c9f437a40c0":[1,0,0,12,1,6],
 "classPS3Mapi_1_1XMB.html#a34a9c530b496fea57c7835fa3018fae8af05d13cf05350ed930f8d4699913be8f":[1,0,0,12,1,1],
 "classPS3Mapi_1_1XMB.html#a422d28e18b18aa5ea4a52ed33ab0c0ee":[1,0,0,12,3],
 "classPS3Mapi_1_1XMB.html#a5d129dffedcf5307693f98d61677e586":[1,0,0,12,6],

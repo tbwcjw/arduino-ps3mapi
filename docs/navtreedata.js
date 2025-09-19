@@ -50,7 +50,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classPS3Mapi_1_1XMB.html#a34a9c530b496fea57c7835fa3018fae8af05d13cf05350ed930f8d4699913be8f"
+"classPS3Mapi_1_1XMB.html#a34a9c530b496fea57c7835fa3018fae8a48787b00351a44eebb30579d522f0de2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
