@@ -10,7 +10,8 @@
 #include "ps3mapi.h"
 #include "Arduino.h"
 
-PS3Mapi::PS3Mapi(const String& ip) : ip(ip), 
+PS3Mapi::PS3Mapi(const String& ip, const bool& displayErrors) : ip(ip), 
+displayErrors(displayErrors),
 system(this), 
 notify(this), 
 process(this), 
@@ -152,15 +153,25 @@ bool PS3Mapi::System::sendShutdown() {
 }
 bool PS3Mapi::System::changeFanMode(const FanMode& mode) {
     if(mode == MANUAL) return ps3mapi->_sendCommandBool("cpursx.ps3", "man");
+    else if(mode == DYNAMIC) return ps3mapi->_sendCommandBool("cpursx.ps3", "dyn");
     else if(mode == SYSCON) return ps3mapi->_sendCommandBool("cpursx.ps3", "sys");
-    else if(mode == AUTO) return ps3mapi->_sendCommandBool("cpursx.ps3", "auto");
-    return ps3mapi->_sendCommandBool("cpursx.ps3", "dyn"); //default
+    return ps3mapi->_sendCommandBool("cpursx.ps3", "auto"); //default
 }
 bool PS3Mapi::System::setTargetTemp(const int& celcius) {
     return ps3mapi->_sendCommandBool("cpursx.ps3", "max="+celcius);
 }
 bool PS3Mapi::System::setFanSpeed(const int& celcius) {
     return ps3mapi->_sendCommandBool("cpursx.ps3", "fan="+celcius);
+}
+int PS3Mapi::System::getFanSpeed(const bool& raw) {
+    int fanSpeed = raw
+    ? ps3mapi->_sendCommandArray("ps3mapi.ps3", "PS3 GETFANSPEED")[1].toInt()
+    : ps3mapi->_sendCommandArray("ps3mapi.ps3", "PS3 GETFANSPEED")[0].toInt();
+
+    return fanSpeed;
+}
+int PS3Mapi::System::getFanMode() {
+    return ps3mapi->_sendCommandArray("ps3mapi.ps3", "PS3 GETFANSPEED")[2].toInt();
 }
 bool PS3Mapi::System::increaseFanSpeed() {
     return ps3mapi->_sendCommandBool("cpursx.ps3", "up");
@@ -412,10 +423,14 @@ String PS3Mapi::_sendCommand(const String& apiArg, const String& route) {
     http.begin(url);
 
     int httpResponseCode = http.GET();
-    String value = "";
-    if (httpResponseCode > 0) {
-        value = extractResponse(http.getString());
-    } else Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+    String value = "0";
+    if (httpResponseCode < 0) {
+        if(displayErrors) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+        http.end();
+        return value;
+    }
+    value = extractResponse(http.getString());
+
     http.end();
     return value;
 }
@@ -435,7 +450,12 @@ std::vector<String> PS3Mapi::_sendCommandArray(const String& apiArg, const Strin
 
     int httpResponseCode = http.GET();
     std::vector<String> result;
-    if (httpResponseCode < 0) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+    if (httpResponseCode < 0) {
+        if(displayErrors) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+        http.end();
+        return std::vector<String>();
+    }
+
     result = arrayToList(http.getString());
     http.end();
     return result;
@@ -463,8 +483,11 @@ bool PS3Mapi::_sendCommandBool(const String& apiArg, const String& route) {
     http.begin(url);
 
     int httpResponseCode = http.GET();
-    if(httpResponseCode < 0) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
-
+    if(httpResponseCode < 0) {
+        if(displayErrors) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+        http.end();
+        return false;
+    }
     String respStr = extractResponse(http.getString());
     http.end();
 
@@ -487,11 +510,17 @@ std::pair<int,int> PS3Mapi::_sendCommandTuple(const String& apiArg, const String
     HTTPClient http;
     String url = "http://" + ip + "/" + apiArg + "?" + urlEncode(route);
     http.begin(url);
-    
-    int httpResponseCode = http.GET();
-    if (httpResponseCode < 0) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
 
-    std::pair<int,int> result = parseTuple(http.getString());
+    std::pair<int,int> result = {0,0};
+
+    int httpResponseCode = http.GET();
+    if (httpResponseCode < 0) {
+        if(displayErrors) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+        http.end();
+        return std::pair<int,int>();
+    }
+
+    result = parseTuple(http.getString());
 
     http.end();
     return result;

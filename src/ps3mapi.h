@@ -18,7 +18,7 @@
 
 class PS3Mapi {
 public:
-    PS3Mapi(const String& ip);
+    PS3Mapi(const String& ip, const bool& displayErrors = false);
     class System {
     public:
         System(PS3Mapi* wm);
@@ -59,9 +59,13 @@ public:
             AUTO = 2,
             SYSCON = 3,
         };
-        bool changeFanMode(const FanMode& mode);
+        bool changeFanMode(const FanMode& mode = AUTO);
         bool setTargetTemp(const int& celcius);
         bool setFanSpeed(const int& percent);
+        #warning "PS3 GETFANSPEED is not in the main release of webMAN yet. See https://github.com/aldostools/webMAN-MOD/issues/1283"
+        int getFanSpeed(const bool& raw = false);
+        #warning "PS3 GETFANSPEED is not in the main release of webMAN yet. See https://github.com/aldostools/webMAN-MOD/issues/1283"
+        int getFanMode();
         bool increaseFanSpeed();
         bool decreaseFanSpeed();
     private:
@@ -283,8 +287,6 @@ public:
     class Network {
     public:
         Network(PS3Mapi* wm);
-        bool enable();
-        bool disable();
         enum Server {
             ALL = 0,
             PS3MAPI = 1,
@@ -292,6 +294,8 @@ public:
             NETSRV = 3,
             ARTEMIS = 4
         };
+        bool enable();
+        bool disable();
         bool startServer(const Server& server = ALL);
         bool stopServer(const Server& server = ALL);
         bool changeDnsPrimary(const String& address);
@@ -348,7 +352,8 @@ public:
     private:
         PS3Mapi* ps3mapi;
     };
-    String ip;    
+    String ip; 
+    bool displayErrors;   
     System system;
     Notify notify;
     Process process;
