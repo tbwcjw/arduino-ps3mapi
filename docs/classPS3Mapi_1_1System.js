@@ -1,7 +1,15 @@
 var classPS3Mapi_1_1System =
 [
+    [ "FanMode", "classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279", [
+      [ "DYNAMIC", "classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279a9a417929910f52a0a0e9b75bfdd1d8eb", null ],
+      [ "MANUAL", "classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279abbf022c4f3b71d4c6c11be8043b3065d", null ],
+      [ "AUTO", "classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279a3e07ae668317c1ba5a577d63fe9f4b7e", null ],
+      [ "SYSCON", "classPS3Mapi_1_1System.html#a27d145c112aba00ac638141b10810279a39e1783a16a3720c26d857a361460ef1", null ]
+    ] ],
     [ "System", "classPS3Mapi_1_1System.html#ae94c84108634f23ab82d0c116fac3c39", null ],
+    [ "changeFanMode", "classPS3Mapi_1_1System.html#a6d3cef721651d61b4c5fea496bc2f218", null ],
     [ "checkSyscall", "classPS3Mapi_1_1System.html#ae991aedfea638220d2c628f0c469bb54", null ],
+    [ "decreaseFanSpeed", "classPS3Mapi_1_1System.html#a7ef53c7d3254ad7ce74a9c0a14b23c1f", null ],
     [ "delHistory", "classPS3Mapi_1_1System.html#a7e0f5af5858f400ee53ecd9722eaaa75", null ],
     [ "delHistoryF", "classPS3Mapi_1_1System.html#a3f5bf04347c4b54857c9a370d01b8034", null ],
     [ "disableSyscall", "classPS3Mapi_1_1System.html#a1ea39105ce120d1c5b8ccd236da97deb", null ],
@@ -21,6 +29,7 @@ var classPS3Mapi_1_1System =
     [ "getServerVersion", "classPS3Mapi_1_1System.html#a23993cb7bb095599b81e90c179889e97", null ],
     [ "getSysInfo", "classPS3Mapi_1_1System.html#a7b6cb4110d1ec24f3482440ca6317a9a", null ],
     [ "getTemp", "classPS3Mapi_1_1System.html#a9f86c8f1f3c1f7fe410f4aeeecfec802", null ],
+    [ "increaseFanSpeed", "classPS3Mapi_1_1System.html#aabc05316ad9bda3b62e74e252f57bf98", null ],
     [ "pCheckSyscall8", "classPS3Mapi_1_1System.html#adb33d426d2aaabe458e827429087b92a", null ],
     [ "pDisableSyscall8", "classPS3Mapi_1_1System.html#a9198322bc02c3d592ef3913febf6a748", null ],
     [ "removeHook", "classPS3Mapi_1_1System.html#a8d113f9bd1c566030e357c99b02249e0", null ],
@@ -28,8 +37,10 @@ var classPS3Mapi_1_1System =
     [ "sendReboot", "classPS3Mapi_1_1System.html#a0ceda2ac231806967435e8c974ea9494", null ],
     [ "sendShutdown", "classPS3Mapi_1_1System.html#ace81329baced7ffbb796efc8950dc5aa", null ],
     [ "sendSoftReboot", "classPS3Mapi_1_1System.html#a4f9e8791d8a67d841ee63035a6676221", null ],
+    [ "setFanSpeed", "classPS3Mapi_1_1System.html#a2f2cde01a96347dd417b0a6087b6ea1e", null ],
     [ "setGpuClock", "classPS3Mapi_1_1System.html#acffce3e0d6575bbfded7bf8366038c85", null ],
     [ "setIdps", "classPS3Mapi_1_1System.html#a311aefecfbb372776581ab0eab153a2b", null ],
     [ "setPsid", "classPS3Mapi_1_1System.html#a217e7d734018948398d4e005ba80d3c4", null ],
+    [ "setTargetTemp", "classPS3Mapi_1_1System.html#a7aea23407c19ac961f298c7d28445c19", null ],
     [ "setVRamClock", "classPS3Mapi_1_1System.html#aff59d8972774d4cf6ba78b83873d047a", null ]
 ];

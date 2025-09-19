@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yellow_0',['YELLOW',['../classPS3Mapi_1_1Notify.html#a2b3319c6d7f510427763f12f947adaf4a7b80d84d9f29bfdec1c0948d58bb8a40',1,'PS3Mapi::Notify']]]
+  ['xmb_0',['xmb',['../classPS3Mapi_1_1XMB.html',1,'PS3Mapi::XMB'],['../classPS3Mapi_1_1XMB.html#a946f60f904fe41aa183e257f2a2c4a1e',1,'PS3Mapi::XMB::XMB()'],['../classPS3Mapi.html#ad8a489f9de1d3c7664f5078473541aa4',1,'PS3Mapi::xmb']]]
 ];

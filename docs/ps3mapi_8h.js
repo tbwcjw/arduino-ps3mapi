@@ -11,5 +11,7 @@ var ps3mapi_8h =
     [ "PS3Mapi::Level", "classPS3Mapi_1_1Level.html", "classPS3Mapi_1_1Level" ],
     [ "PS3Mapi::File", "classPS3Mapi_1_1File.html", "classPS3Mapi_1_1File" ],
     [ "PS3Mapi::Pad", "classPS3Mapi_1_1Pad.html", "classPS3Mapi_1_1Pad" ],
+    [ "PS3Mapi::Network", "classPS3Mapi_1_1Network.html", "classPS3Mapi_1_1Network" ],
+    [ "PS3Mapi::XMB", "classPS3Mapi_1_1XMB.html", "classPS3Mapi_1_1XMB" ],
     [ "PS3Mapi::Browser", "classPS3Mapi_1_1Browser.html", "classPS3Mapi_1_1Browser" ]
 ];
