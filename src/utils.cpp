@@ -57,8 +57,8 @@ std::pair<int,int> parseTuple(const String &tupleString) {
         if (commaIndex >= 0) { 
             String first = numbers.substring(0, commaIndex); 
             String second = numbers.substring(commaIndex + 1); 
-            value.first = first.toInt(); 
-            value.second = second.toInt(); 
+            if (first.length() > 0) value.first = first.toInt();
+            if (second.length() > 0) value.second = second.toInt();
             } 
         } 
     return value; 

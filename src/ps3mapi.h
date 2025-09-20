@@ -16,6 +16,9 @@
 #include <utility>
 #include <vector>
 
+#define HTTP_RESPONSE_ERROR(x)  Serial.printf("\n(%d) Failed to connect to the specified IP. Is the IP correct, and is the system running?\n", x)
+#define HTTP_RESPONSE_LENGTH_ERROR Serial.println("A null/empty response was received.")
+#define UNEXPECTED_SIZE_ERROR(x,y) Serial.printf("\nElement has %d size, expected %d. This is probably a library problem. Report it via github.\n", x, y)
 class PS3Mapi {
 public:
     PS3Mapi(const String& ip, const bool& displayErrors = false);
@@ -371,7 +374,7 @@ private:
     String _sendCommand(const String& apiArg, const String& route);
     bool _sendCommandBool(const String& apiArg, const String& route="");
     std::pair<int,int> _sendCommandTuple(const String& apiArg, const String& route);
-    std::vector<String> _sendCommandArray(const String& apiArg, const String& route);
+    std::vector<String> _sendCommandArray(const String& apiArg, const String& route, const size_t& expectedLength);
 };
 
 #endif

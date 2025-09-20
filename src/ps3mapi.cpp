@@ -165,13 +165,13 @@ bool PS3Mapi::System::setFanSpeed(const int& celcius) {
 }
 int PS3Mapi::System::getFanSpeed(const bool& raw) {
     int fanSpeed = raw
-    ? ps3mapi->_sendCommandArray("ps3mapi.ps3", "PS3 GETFANSPEED")[1].toInt()
-    : ps3mapi->_sendCommandArray("ps3mapi.ps3", "PS3 GETFANSPEED")[0].toInt();
+    ? ps3mapi->_sendCommandArray("ps3mapi.ps3", "PS3 GETFANSPEED", 3)[1].toInt()
+    : ps3mapi->_sendCommandArray("ps3mapi.ps3", "PS3 GETFANSPEED", 3)[0].toInt();
 
     return fanSpeed;
 }
 int PS3Mapi::System::getFanMode() {
-    return ps3mapi->_sendCommandArray("ps3mapi.ps3", "PS3 GETFANSPEED")[2].toInt();
+    return ps3mapi->_sendCommandArray("ps3mapi.ps3", "PS3 GETFANSPEED", 3)[2].toInt();
 }
 bool PS3Mapi::System::increaseFanSpeed() {
     return ps3mapi->_sendCommandBool("cpursx.ps3", "up");
@@ -205,7 +205,7 @@ String PS3Mapi::Process::getProcName(const String& pid) {
 }
 
 std::vector<String> PS3Mapi::Process::getAllProcID() {
-    return ps3mapi->_sendCommandArray("ps3mapi.ps3", "PROCESS GETALLPID");
+    return ps3mapi->_sendCommandArray("ps3mapi.ps3", "PROCESS GETALLPID", 15);
 }
 // - Memory -
 String PS3Mapi::Memory::getMemory(const String& pid, const String& offset, const int& size) {
@@ -425,11 +425,19 @@ String PS3Mapi::_sendCommand(const String& apiArg, const String& route) {
     int httpResponseCode = http.GET();
     String value = "0";
     if (httpResponseCode < 0) {
-        if(displayErrors) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+        if(displayErrors) HTTP_RESPONSE_ERROR(httpResponseCode);
         http.end();
         return value;
     }
-    value = extractResponse(http.getString());
+
+    String resp = http.getString();
+    if (resp.length() == 0) { 
+        if(displayErrors) HTTP_RESPONSE_LENGTH_ERROR;
+        http.end();
+        return value;
+    }
+
+    value = extractResponse(resp);
 
     http.end();
     return value;
@@ -443,20 +451,38 @@ String PS3Mapi::_sendCommand(const String& apiArg, const String& route) {
  *
  * @see urlEncode(), arrayToList()
  */
-std::vector<String> PS3Mapi::_sendCommandArray(const String& apiArg, const String& route) {
+std::vector<String> PS3Mapi::_sendCommandArray(const String& apiArg, const String& route, const size_t& expectedLength) {
     HTTPClient http;
     String url = "http://" + ip + "/" + apiArg + "?" + urlEncode(route);
     http.begin(url);
 
     int httpResponseCode = http.GET();
-    std::vector<String> result;
+
+    std::vector<String> defaultResult(expectedLength, "0");
+
     if (httpResponseCode < 0) {
-        if(displayErrors) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+        if (displayErrors) HTTP_RESPONSE_ERROR(httpResponseCode);
         http.end();
-        return std::vector<String>();
+        return defaultResult;
     }
 
-    result = arrayToList(http.getString());
+    String resp = http.getString();
+    http.end();
+
+    if (resp.length() == 0) {
+        if (displayErrors) HTTP_RESPONSE_LENGTH_ERROR;
+        
+        return defaultResult;
+    }
+
+    std::vector<String> result = arrayToList(resp);
+
+    if (result.size() != expectedLength) {
+        if (displayErrors) UNEXPECTED_SIZE_ERROR(result.size(), expectedLength);
+
+        return defaultResult;
+    }
+
     http.end();
     return result;
 }
@@ -484,12 +510,20 @@ bool PS3Mapi::_sendCommandBool(const String& apiArg, const String& route) {
 
     int httpResponseCode = http.GET();
     if(httpResponseCode < 0) {
-        if(displayErrors) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+        if(displayErrors) if(displayErrors) HTTP_RESPONSE_ERROR(httpResponseCode);
         http.end();
         return false;
     }
-    String respStr = extractResponse(http.getString());
+    String resp = http.getString();
     http.end();
+
+    if (resp.length() == 0) {
+        if(displayErrors) HTTP_RESPONSE_LENGTH_ERROR;
+        return false;
+    }
+
+    String respStr = extractResponse(resp);
+    
 
     if (respStr == "0" || respStr == "false") return false;
     if (respStr == "1" || respStr == "true") return true;
@@ -515,12 +549,20 @@ std::pair<int,int> PS3Mapi::_sendCommandTuple(const String& apiArg, const String
 
     int httpResponseCode = http.GET();
     if (httpResponseCode < 0) {
-        if(displayErrors) Serial.println("Failed to connect to the specified IP. Is the IP correct, and is the system running?");
+        if(displayErrors) HTTP_RESPONSE_ERROR(httpResponseCode);
         http.end();
-        return std::pair<int,int>();
+        return result;
     }
 
-    result = parseTuple(http.getString());
+    String resp = http.getString();
+    http.end();
+
+    if (resp.length() == 0) {
+        if(displayErrors) HTTP_RESPONSE_LENGTH_ERROR;
+        return result;
+    }
+
+    result = parseTuple(resp);
 
     http.end();
     return result;
