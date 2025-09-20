@@ -91,7 +91,8 @@ $(document).ready(function(){initNavTree('ps3mapi_8h.html',''); initResizable();
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">ps3mapi.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -132,7 +133,83 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPS3Mapi_1_1Browser.html">PS3Mapi::Browser</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ab6171f4d4d2cf21422a86fdaabcff59e" id="r_ab6171f4d4d2cf21422a86fdaabcff59e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ps3mapi_8h.html#ab6171f4d4d2cf21422a86fdaabcff59e">HTTP_RESPONSE_ERROR</a>(x)&#160;&#160;&#160;Serial.printf(&quot;\n(%d) Failed to connect to the specified IP. Is the IP correct, and is the system running?\n&quot;, x)</td></tr>
+<tr class="separator:ab6171f4d4d2cf21422a86fdaabcff59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ed337624bf1e7f9f42b82aeccabcf1" id="r_a96ed337624bf1e7f9f42b82aeccabcf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ps3mapi_8h.html#a96ed337624bf1e7f9f42b82aeccabcf1">HTTP_RESPONSE_LENGTH_ERROR</a>&#160;&#160;&#160;Serial.println(&quot;A null/empty response was received.&quot;)</td></tr>
+<tr class="separator:a96ed337624bf1e7f9f42b82aeccabcf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d05618c1a56fd7029ed9fd95cbb0043" id="r_a3d05618c1a56fd7029ed9fd95cbb0043"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ps3mapi_8h.html#a3d05618c1a56fd7029ed9fd95cbb0043">UNEXPECTED_SIZE_ERROR</a>(x,  y)&#160;&#160;&#160;Serial.printf(&quot;\nElement has %d size, expected %d. This is probably a library problem. Report it via github.\n&quot;, x, y)</td></tr>
+<tr class="separator:a3d05618c1a56fd7029ed9fd95cbb0043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ab6171f4d4d2cf21422a86fdaabcff59e" name="ab6171f4d4d2cf21422a86fdaabcff59e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6171f4d4d2cf21422a86fdaabcff59e">&#9670;&#160;</a></span>HTTP_RESPONSE_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HTTP_RESPONSE_ERROR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;Serial.printf(&quot;\n(%d) Failed to connect to the specified IP. Is the IP correct, and is the system running?\n&quot;, x)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8h_source.html#l00019">19</a> of file <a class="el" href="ps3mapi_8h_source.html">ps3mapi.h</a>.</p>
+
+</div>
+</div>
+<a id="a96ed337624bf1e7f9f42b82aeccabcf1" name="a96ed337624bf1e7f9f42b82aeccabcf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ed337624bf1e7f9f42b82aeccabcf1">&#9670;&#160;</a></span>HTTP_RESPONSE_LENGTH_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HTTP_RESPONSE_LENGTH_ERROR&#160;&#160;&#160;Serial.println(&quot;A null/empty response was received.&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8h_source.html#l00020">20</a> of file <a class="el" href="ps3mapi_8h_source.html">ps3mapi.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d05618c1a56fd7029ed9fd95cbb0043" name="a3d05618c1a56fd7029ed9fd95cbb0043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d05618c1a56fd7029ed9fd95cbb0043">&#9670;&#160;</a></span>UNEXPECTED_SIZE_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNEXPECTED_SIZE_ERROR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;Serial.printf(&quot;\nElement has %d size, expected %d. This is probably a library problem. Report it via github.\n&quot;, x, y)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ps3mapi_8h_source.html#l00021">21</a> of file <a class="el" href="ps3mapi_8h_source.html">ps3mapi.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

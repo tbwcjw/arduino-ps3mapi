@@ -7,7 +7,8 @@ var indexSectionsWithContent =
   4: "bdfilmnprstx",
   5: "bcfils",
   6: "abcdefghiklmnopqrstuvwy",
-  7: "dl"
+  7: "hu",
+  8: "dl"
 };
 
 var indexSectionNames =
@@ -19,7 +20,8 @@ var indexSectionNames =
   4: "variables",
   5: "enums",
   6: "enumvalues",
-  7: "pages"
+  7: "defines",
+  8: "pages"
 };
 
 var indexSectionLabels =
@@ -31,6 +33,7 @@ var indexSectionLabels =
   4: "Variables",
   5: "Enumerations",
   6: "Enumerator",
-  7: "Pages"
+  7: "Macros",
+  8: "Pages"
 };
 

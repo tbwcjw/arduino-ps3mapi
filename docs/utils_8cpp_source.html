@@ -145,8 +145,8 @@ $(document).ready(function(){initNavTree('utils_8cpp_source.html',''); initResiz
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">if</span> (commaIndex &gt;= 0) { </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            String first = numbers.substring(0, commaIndex); </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            String second = numbers.substring(commaIndex + 1); </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            value.first = first.toInt(); </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            value.second = second.toInt(); </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">if</span> (first.length() &gt; 0) value.first = first.toInt();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">if</span> (second.length() &gt; 0) value.second = second.toInt();</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            } </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        } </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> value; </div>

@@ -13,5 +13,8 @@ var ps3mapi_8h =
     [ "PS3Mapi::Pad", "classPS3Mapi_1_1Pad.html", "classPS3Mapi_1_1Pad" ],
     [ "PS3Mapi::Network", "classPS3Mapi_1_1Network.html", "classPS3Mapi_1_1Network" ],
     [ "PS3Mapi::XMB", "classPS3Mapi_1_1XMB.html", "classPS3Mapi_1_1XMB" ],
-    [ "PS3Mapi::Browser", "classPS3Mapi_1_1Browser.html", "classPS3Mapi_1_1Browser" ]
+    [ "PS3Mapi::Browser", "classPS3Mapi_1_1Browser.html", "classPS3Mapi_1_1Browser" ],
+    [ "HTTP_RESPONSE_ERROR", "ps3mapi_8h.html#ab6171f4d4d2cf21422a86fdaabcff59e", null ],
+    [ "HTTP_RESPONSE_LENGTH_ERROR", "ps3mapi_8h.html#a96ed337624bf1e7f9f42b82aeccabcf1", null ],
+    [ "UNEXPECTED_SIZE_ERROR", "ps3mapi_8h.html#a3d05618c1a56fd7029ed9fd95cbb0043", null ]
 ];
